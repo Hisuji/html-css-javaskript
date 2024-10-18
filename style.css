@@ -1,0 +1,153 @@
+body {
+    background-color: blueviolet;
+}
+h1 {
+    color: azure;
+    font-family: Verdana;
+    font-size:160%
+}
+p {
+    color:rgb(0, 0, 0);
+    font-size: 130%;
+    /* border: 2px solid powderblue;*/ /* soild = kasten px=pixel solid=breite*/
+    padding: 10px; /* padding=abstand
+/* margin: 50px;*/ /* abstand außerhalb des kastens  */
+}
+
+/*links kann man anpassen. farbe ändern. besuchte links verändern usw */
+a:link { 
+    color:rgb(20, 24, 255);
+    background-color:transparent;
+    text-decoration: underline; /* schriftarten */
+}
+
+a:visited {
+    color:chocolate;
+    background-color:none;
+    text-decoration: underline;
+}
+
+a:hover {
+    color:rgb(0, 0, 0);
+    background-color:none;
+    text-decoration: underline;
+}
+
+a:active {
+    color:rgb(30, 210, 72);
+    background-color:none;
+    text-decoration: underline;
+}
+
+table {
+    border-spacing: 50px;
+ }
+
+ .mycontainer {
+    width:100%;
+    overflow:auto;
+  }
+  .mycontainer div {
+    width:33%;
+    float:left;
+  }
+
+  /*h1 {
+    .mycontainer
+    color: azure;
+    font-family: Verdana;
+    font-size:160%
+  }
+   klassen kann man auch in css angeben */
+
+
+ /*ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+    float: right;
+}
+li {
+    display: block;
+    color: rgb(164, 0, 0);
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}*/
+
+
+/* anpassung von listen elemente */
+
+
+
+
+ 
+
+/* table, th, td {
+    border: 1px solid rgb(0, 0, 0);
+    border-color: chartreuse;
+    border-style: dashed;
+    /*border-collapse: collapse;
+    border-radius: 10px;
+  }
+  th, td{
+    background-color: azure;
+    padding: 3px;
+  }
+
+    th:nth-child(odd) {
+    background-color: #490020;
+  }
+
+  td:nth-child(even), th:nth-child(even) {
+    background-color: #009b9b;
+  }
+*/
+
+  th:hover {background-color: #D6EEEE;}
+
+  td{
+    text-align: center;
+  }
+
+
+
+  /*kasten für die tablele
+  prinzip das selbe px= breite + farbe
+  um doppelte ränder zu vermeiden = border-collapse. dardruch ist kein 2 facher rand
+  die hintergrund farbe in der tabelle ist auch veränderbar
+  border-radius kann die ecken abrunden 
+  border-style: ...; bestimmt das aussehen der ränder
+  border-color bestimmt die farbe der tabelle
+
+  padding abstand zu text zur zeile
+  man kann alle seiten anpassen, top,buttom, left, right
+  border-spacing stellt den abstand der zeilen zu der äußeren kante da
+    th, td:nth-child(even) {  färbt spalten ein im zebra effekt. 
+    th und td reinfolge machen unterschiede = das die th die farbe bekommt, td bleibt gleich
+    nur Th oder td bewirkt das die spalte 1 und 3 farbig wird und 2 normal
+    ! Merke aufpassen welches TAG ich benutze darfür 
+
+    td:nth-child(even), th:nth-child(even)
+ bewirkt das es horizontal der efekt verteilt ist 
+ beides kann man zusammen kombenieren
+    
+ :hover beim drüber gehen passiert was z.b andere farbe
+ */
+
+/* button links */
+/*a:link, a:visited {
+    background-color: azure;
+    color:black;
+    padding: 30px 45px;
+    text-align: start;
+    text-decoration: none;
+    display: inline-block;
+
+a:hover, a:active {
+  background-color: red;
+
+}*/
+

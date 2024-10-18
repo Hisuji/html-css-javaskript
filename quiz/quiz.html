@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>quiz</title>
+    <link rel = "stylesheet" href = "quiz.css">
+</head>
+
+<body>
+
+<h1>Quiz</h1>
+<br>
+<h2 class="frageninhalt" id = fragentext></h2>
+
+<div class = "hintergrund">
+<div class = "quiz">
+<div id = "antwort-knf"></div>
+<button onclick=buttonclick(this) id = antwort1 class="knopf" >antwort1</button> <!-- this macht das die anderen elemente mitübergeben werden -->
+<button onclick=buttonclick(this) id = antwort2 class="knopf" >antwort2</button>
+<br>
+<button onclick=buttonclick(this) id = antwort3 class="knopf" >antwort3</button>
+<button onclick=buttonclick(this) id = antwort4 class="knopf" >antwort4</button>
+</div>
+<br>
+<button class= "buttonunten" id="start-knf" onclick = start()>Start</button>
+<button class= "buttonunten" id="weiter" onclick = weiter()> weiter</button>
+</div>
+<br>
+
+<script>
+
+const frage = [];
+const antwort = [];
+let richtigAntwort;
+let punkte = 0;
+let gesperrt = false; // wert wird standert mäsig auf fals gesetzt
+rundenzaehler = 0;
+anzahlRunden = 3;
+let zeit;
+
+function start() {
+    rundenzaehler = 0;
+    punkte = 0;
+    fragenanzeigen();
+    quizstart();   
+}
+
+function fragenanzeigen () {
+    frage[0] = 'Wer schuf die figur Sherlock Holmes?# John Lennon# Arthur Conan Doyle# Stephen King# J. R. Ward#';
+    antwort[0] = ' Arthur Conan Doyle';  // man kann den jeweilige richtige antwort festlegen in ein weiteres array hier das der sting a richtig ist 
+    frage[1] = 'Wie viele Knochen hat der menschliche Körper (Erwachsener)?# 300# 201# 204# 206#';
+    antwort[1] = ' 206';
+    frage[2] = 'Wie heißt die weltweit größte Stadt?# Peking# shanghai# Delhi# Tokio#';
+    antwort[2] = ' Tokio';
+}
+
+// mit shift wird die frage um eins geschoben (erste wird nicht mehr gezeigt)
+//split trennt die einzelnden array elemente
+function quizstart() {
+    if (rundenzaehler<anzahlRunden) {
+
+        document.getElementById('antwort1').style.background = '#88b2cc';
+        document.getElementById('antwort2').style.background = '#88b2cc';
+        document.getElementById('antwort3').style.background = '#88b2cc';
+        document.getElementById('antwort4').style.background = '#88b2cc';
+
+        gesperrt = false; // damit man bei anfang der frage wieder die function ausführen kann 
+                      //true wurde in den kontext sondst den button nicht clickbar machen
+
+    
+    let aktuellefrage = frage[rundenzaehler]; // aktuelle frage variabel bezieht sich auf den array. immer den namen vom array hernehmen
+    const queston = aktuellefrage.split('#'); // hier bezieht es sich auf das # da es damit getrennt ist
+    richtigAntwort = antwort[rundenzaehler];
+
+    document.getElementById('fragentext').innerHTML = queston[0];
+    document.getElementById('antwort1').innerHTML = queston[1]//hier wird das erste element von der frage genommen mit # in dem a (0 ist die frage)
+    document.getElementById('antwort2').innerHTML = queston[2] // 2 ist b usw
+    document.getElementById('antwort3').innerHTML = queston[3]
+    document.getElementById('antwort4').innerHTML = queston[4]
+    
+        rundenzaehler++;
+    
+    } else {
+        document.getElementById('fragentext').innerHTML = ' du hast alle fragen beantwortet. du hast ' + punkte + ' punkte';
+    }
+}
+
+    function weiter() {
+        quizstart();
+    } 
+     
+
+
+ function buttonclick(gedrückterbutton) {
+    if (gesperrt == true) { 
+        return; // führt die function nochmal von vorne aus
+    }
+    gesperrt = true; // true macht beim klicken erst das der button nicht andere buttons gedrückt werden kann
+    if (gedrückterbutton.innerHTML == richtigAntwort) {
+        punkte++;
+        gedrückterbutton.style.background = 'green';
+    } else {
+        gedrückterbutton.style.background = 'red';
+    }
+    //setTimeout (weiter, 3000);
+
+ }
+
+
+
+
+</script>
+
+
+</body>

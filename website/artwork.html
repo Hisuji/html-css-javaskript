@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<htm>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> portfolio</title>
+        <link rel="stylesheet" href="design.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+
+    <div class="platzhalterüberschrift"> <!-- headline ganz oben -->
+        <h1>hisu´s art galerie</h1>
+    </div>
+    
+    <div class="topnav" id="myTopnav" class="nav">  <!--button liste+ link-->
+        <input type="button" class="button me" onclick="document.location='itsme.html'" value="this is me">
+        <input type="button" class="button chibi" onclick="document.location='chibis.html'" value="chibis">
+        <input type="button" class="button artwork disabled" onclick="document.location='artwork.html'" value="artwork">
+        <input type="button" class="button logo" onclick="document.location='logos.html'" value="logo">
+        <input type="button" class="button emote" onclick="document.location='emote.html'" value="emotes">
+        <a href="javascript:void(0);" class="icon" onclick="openMenu()">
+            <i class="fa fa-bars"></i>
+            </a>
+    </div>
+
+    <script>
+        function openMenu() {
+            const myTopnav = document.getElementById("myTopnav")
+            myTopnav.classList.toggle('responsive')
+        }
+    </script>
+
+    <h2 class="teilüberschrift">artworks </h2>
+    <hr>
+
+
+    <section class="grid">
+        <div class="artwork9">
+            <img src="../website/artworks website/saturn-ausmalbild.webp" alt="sailor saturn">
+            <p class="überschrift">ausmalbild Sailor saturn</p>
+            <p>von nashi</p>
+            <p>juni 2024</p>
+        </div>
+        <div class="artwork7">
+            <img src="../website/artworks website/Inkling.webp" alt="inkling">
+            <p class="überschrift">inkling</p>
+            <p>Colorations übung</p>
+            <p> art von ?</p>
+            <p>2023 Winter</p>
+        </div>
+    </section>
+       
+    <section class="grid">
+        <div class="artwork3">
+            <img src="../website/artworks website/pinguin.webp" alt="pinguin">
+            <p class="überschrift">pinguin</p>
+            <p>2023</p>
+        </div>
+        <div class="artwork4">
+            <img src="../website/artworks website/aufgabe.webp" alt="idol">
+            <p class="überschrift">Idol</p>
+            <p>2024 sommer</p>
+        </div>
+    </section>
+
+    <section class="grid">
+        <div class="artwork5">
+            <img src="../website/artworks website/outline.webp" alt="">
+            <p class="überschrift">outline</p>
+            <p>2024 Sommer</p>
+        </div>
+        <div class="artwork6">
+            <img src="../website/artworks website/bauz-ausmalbild.webp" alt="bauz">
+            <p class="überschrift">bauz ausmalbild</p>
+            <p class="überschrift">Künstler:nashi</p>
+            <p>colorations übung</p>
+            <p>2024 juni</p>
+        </div>
+    </section>
+
+    <section class="grid">
+        
+        <div class="artwork2">
+            <img src="../website/artworks website/Kirby.webp" alt="kirby" >
+            <p class="überschrift">kirby</p>
+            <p>29.10.23</p>
+        </div>
+        <div class="artwork8">
+            <img src="../website/artworks website/stream_layout-_tunier.webp" alt="streamlayout">
+            <p class="überschrift">streamlayout</p>
+            <p> für ein tunier</p>
+            <p>2023</p>
+        </div>
+    </section>
+
+    <section class="grid">
+        <div class="artwork1">
+            <img src="../website/artworks website/Unbenannt.webp" alt="oc" >
+            <p class="überschrift">own charackter</p>
+            <p>2021</p>
+        </div>
+    </section>
+
+    <footer>
+        <hr>
+    </footer>
+
+
+
+</html>

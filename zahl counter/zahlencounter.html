@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="UTF-8">
+<title>zahlen conter</title>
+<link rel="stylesheet" href="cssZahlcounter.css">
+</head>
+
+<body>
+  <div>
+    <input type="text" id="display" class="display" disabled value="0"/>
+
+    <section>
+      <button class="b1" id="sum" onclick=plus()>+</button>
+      <button class="b2" id="subtract" onclick=minus()>-</button>
+      <button class="b3" id="restet" onclick="reset()">reset</button>
+    </section>
+  </div>
+  
+
+<script>
+    let= aktuellerWert = 0;
+    let vorherigerWert = null;
+    let operator = null
+
+    function reset(){
+    aktuellerWert = 0;
+    display.value = aktuellerWert;
+    vorherigerWert = null;
+    operator = null;
+  }
+
+    function plus(){
+         aktuellerWert+= 1;
+         display.value = aktuellerWert;
+    }
+
+    function minus(){
+        aktuellerWert-= 1;
+        display.value = aktuellerWert;
+    }
+
+</script>
+
+</body>

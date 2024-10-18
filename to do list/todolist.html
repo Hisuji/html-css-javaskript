@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <title> to do list</title>
+
+  <style>
+    .todo-entry {
+      user-select: none;
+    }
+
+
+    .todo-entry input[type=checkbox]:checked~label {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--input button und feld -->
+  <div class="container">
+    <input type="text" name="todo" id="todo-input" placeholder="Neuer Eintrag">
+    <button id="todo-add">Hinzufügen</button>
+    <button id="todo-delet" onclick=löschen()>löschen</button>
+
+    <div id="todo-list">
+      <!--ids zum hinzufügen der weiteren checkboxen -->
+    </div>
+  </div>
+
+
+  <script> // javascript immer ans ende sondst kann es dazuführen das es nicht funkzioniert
+
+    let index = 0// der index wird festgelegt damit die boxen immer einen zahlen wert haben
+    const todoInput = document.querySelector("#todo-input")
+    const todoButton = document.querySelector("#todo-add")
+    let todoList = document.querySelector("#todo-list")
+    const todobutton2 = document.querySelector("todo-delet")
+    let todos = [];
+    todos = JSON.parse(localStorage.getItem("todos"))
+    index = todos.length
+
+    // function für eine checkbox mit anderen parametern damit man den code nicht 2x schreiben muss )
+    // wenn ein code 2x fast indedisch ist in eine function umschreiben. platzsparrend
+    // erstellt cheboxen verändert werden der index (also die nummer von der jeweiligen checkbox) und der name
+    function addCheckbox(index, name, checked = false) {
+      let newEntry = document.createElement('div');
+      newEntry.classList.add('todo-entry')
+      let istchecked = ""
+      if (checked == true) {
+        istchecked = "checked"
+      }
+
+      //`${a}` functionen aufrufen in ``
+      newEntry.innerHTML = `
+        <input type="checkbox" class="todo-checkbox" id="todo-entry-${index}" ${istchecked}>
+        <label for="todo-entry-${index}">${name}</label>
+        `
+
+      // html einfügen / anhängen
+      todoList.appendChild(newEntry)
+
+      // oben eingefügtes / angehängtes checkbox element 
+      let checkbox = document.getElementById(`todo-entry-${index}`)
+      // variabel auf das event 
+
+      checkbox.addEventListener("change", (event) => {
+        let checked = event.target.checked
+        todos[index].checked = checked
+        save()
+      })
+    }
+    // für jedes todo eine checkbox hinzufügen
+    todos.forEach((todo, index) => {
+      addCheckbox(index, todo.name, todo.checked)
+
+    });
+
+    // das es bleibt mein reloden den array in einen string umwandeln also mit dem wert namen und index wird verändert
+    function save() {
+      localStorage.setItem("todos", JSON.stringify(todos))
+    }
+
+
+
+    // wenn auf den button geklickt wird mit html elementen eine neue box erstellt mit den html
+    // eigenschafteten
+    todoButton.addEventListener("click", (event) => {
+      addCheckbox(index, todoInput.value)
+      todos.push({
+        "name": todoInput.value,
+        "checked": false
+      })
+      save()
+      // ... und es wird noch ein wert nachoben gezählt
+      index++
+    })
+
+// function die ein arrya erstellt wo die todo-entrys reinkommen also. die werte von den boxen
+    function löschen() {
+
+      let todoElements = []
+      todoElements = document.querySelectorAll(".todo-entry")
+
+
+
+      /*   function save() {
+       localStorage.setItem("todos", JSON.stringify(todos))
+     }*/
+      // bezieht sich auf den entry und nummt sich das erste kind.
+      let toDelete = [];
+      todoElements.forEach((todoEntry, index) => {
+        let checkbox = todoEntry.firstElementChild
+
+
+        // ein neuen array was die.....!
+        if (checkbox.checked) {
+          toDelete.push(index)
+          todoEntry.remove();
+        }
+      })
+      //schleife die eins abziehen von eigentlichen wert 
+      // wenn nicht ist er verwirrt von der index reinfolge und speichert die löschungen nicht
+      for (let i = toDelete.length - 1; i >= 0; i--) {
+        todos.splice(toDelete[i], 1)
+      }
+      
+      save();
+
+
+      /*if (checked == true){
+        const delet = document.getElementById("todo")
+        delet.remove();  
+      }*/
+    }
+
+  </script>
+
+
+</body>
+
+</body>

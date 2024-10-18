@@ -1,0 +1,38 @@
+.Ampel{
+    background: rgb(52, 47, 54);
+    height: 130px;
+    margin: 44px;
+    width: 50px;
+}
+
+.Ampel div {
+    border-radius: 30px;
+    height: 35px;
+    margin: 8px;
+    opacity:0.1;
+    width: 35px;
+}
+
+.Ampel .an {
+    opacity:1 !important;
+}
+
+.ampelgruen {
+    background: #0f0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.ampelorange {
+    background:#fc0;
+    transition: opacity 250ms ease-in-out;
+}
+
+.ampelrot {
+    background: #f00;
+    transition: opacity 250ms ease-in-out;
+}
+
+
+
+
+

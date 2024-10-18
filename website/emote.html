@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<htm>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title> portfolio</title>
+
+        <link rel="stylesheet" href="design.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+
+    <body>
+
+    <div class="platzhalterüberschrift"> <!-- headline ganz oben -->
+        <h1>hisu´s art galerie</h1>
+    </div>
+
+    <div class="topnav" id="myTopnav" class="nav">  <!--button liste+ link-->
+        <input type="button" class="button me" onclick="document.location='itsme.html'" value="this is me"></button>
+        <input type="button" class="button chibi" onclick="document.location='chibis.html'" value="chibis"></button>
+        <input type="button" class="button artwork" onclick="document.location='artwork.html'" value="artwork"></button>
+        <input type="button" class="button logo" onclick="document.location='logos.html'" value="logo"></button>
+        <input type="button" class="button emote disabled" onclick="document.location='emote.html'" value="emotes"></button>
+        <a href="javascript:void(0);" class="icon" onclick="openMenu()">
+            <i class="fa fa-bars"></i>
+            </a>
+    </div>
+
+    <script>
+        function openMenu() {
+            const myTopnav = document.getElementById("myTopnav")
+            myTopnav.classList.toggle('responsive')
+        }
+    </script>
+
+    <h2 class="teilüberschrift">emotes </h2>
+    <hr>
+
+    <section class="grid">
+        <div class="artwork5">
+            <img src="../website/artworks website/e-mote_lachen.webp" alt="e-mote">
+            <p class="überschrift">twitch emote</p>
+            <p>2023 winter</p>
+        </div>
+    </section>
+
+</body>
+
+<footer>
+    <hr>
+</footer>
+
+</html>

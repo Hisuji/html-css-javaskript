@@ -1,0 +1,57 @@
+p {
+    text-align: center;
+    /*color: red;*/
+  } 
+/* simple selector das beispiel oben
+
+selectoren sind gruppen diese kann man zu weisen 
+
+diese unterscheidet man in: 
+
+simple selectors = selectoren aufgrund ihrers namen, id, class)
+combinator selector = elemente  aufgrund ihrer beziehungen untereinander
+pseudo-class .. =  elemente aufgrund ihres zustandes
+pseudo-element ..= elemente und style 
+attribute ..= elemente azfgrund ihres attributs 
+*/
+
+#para1 {
+    text-align: center;
+    color: rgb(4, 0, 255);
+  }
+/*auch ein simpel selector wegen id
+heißt alles in class para1 kriegt die declaration zugeschrieben
+spezifische id´s werden mit einen # am anfang begonnen*/
+
+.center {
+    text-align: center;
+    color: red;
+  }
+  /* class werden mit einen .classname begonnen */
+
+  h1.center {
+    text-align: center;
+    color: rgb(145, 255, 0);
+  }
+  /* man kann einzelnde elemente aus der klassen septerat einfärben
+  start tag mit dem gewünschten und ein . mit classname
+  */
+
+  p.large {
+    font-size: 300%;
+  }
+
+  * {
+    text-align: right;
+  }
+  /* * steht für alle tags heißt man passt alles an z.b alles nach rechts gesetzt */
+
+  h1, h2, p {
+    text-align: center;
+    color: red;
+  }
+
+  /*man kann die einzelnden elemente die alle das selbe machen sollen schöner formatieren
+  dazu alle tags in darvor in den selector */
+
+  

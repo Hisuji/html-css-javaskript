@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+    <!-- <base href="URL" target="_blank" 
+     base element  definiert die url der website
+     MUSS! ein URL oder ein target beinhalten (beides geht auch)
+     es geht nur ein base element-->
+
+    <head> <!-- alles was man nicht auf der website sieht .gibt nur jeweils 1x body 1x head 
+        und 1x footer
+        alles im head element sind meta data -->
+
+        <meta charset="UTF-8"> <!--wie viele zeichen angezeigt werden 
+                                    andere sprachen, emotes usw. utf-8 standart-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <!-- passt die seite an mobil geräten an
+         width=device-width passt die seite an das gerät an individuell
+         initial-scale=1.0 legt die zoom größe fest-->
+
+        <title>Document</title><!-- Titel oben im browser    -->
+
+        <!-- style ist ein css element
+         - prioritäten von unten nach oben:
+         3. dartei
+         2. element im head
+         1. im style atribut im head -->
+
+         <link rel="stylesheet" href="style.css">
+         <!--das selbe wie oben funktzioniert mit href="..." -->
+         
+        
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            p {color: rgb(0, 0, 0);}
+
+            img {
+                width: 60%;
+            }
+
+            body {
+        background-image: url('https://placehold.co/600x400');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        }
+
+
+        .test {
+        background-color: darkolivegreen;
+        color:chocolate;
+            border:10px;
+        }
+
+        .note {
+         font-size: 120%;
+            color: red;
+        }
+        
+        
+        .klassea {
+            font-size:50px;
+        }
+
+        .klasseb {
+            color: rgb(88, 0, 0)
+        }
+
+        #myHeader {
+            color:blue;
+            text-align: center;
+        }
+
+            .left, .right {
+            float: left;
+            width: 20%;
+            }
+
+            .main {
+            float: left;
+            width: 60%;
+            }
+
+
+            @media screen and (max-width: 800px) {
+            .left, .main, .right {
+                width: 100%;
+            }
+            }
+
+        </style>
+
+        <!-- body {
+        background-image: url('https://placehold.co/600x400');
+        background-repeat: repeat;
+        }-->
+
+        <!-- IMMER im HEAD tag
+        bild wird im hintergrund angezeigt
+        reapeat = wiederholung, also das bild in mehrfacher wiederholung
+        cover = fixiert das bild ohne es zu strecken das bild bleibt im orginal größe
+        background-size= bestimmt die größe es bildes im hintergrund 
+        -->
+
+        <!-- favicon= -->
+
+        <!--bilder größen können auch im head angepasst werden -->
+
+        <!-- <html lang="en" 
+         für die sprache sind auch mehre möglich z.b en-US -->
+
+    </head>
+    <body> <!-- alles was man auf der website sieht -->
+
+        <!--Überschriften 
+            h1 das größte = wichtigste        -->
+        <h1>My First Heading</h1>
+        <h2>This is heading 2</h2>
+        <h3>This is heading 3</h3>
+        <h4>test</h4>
+        <h5>test</h5>
+        <h6>test</h6>
+
+        <!-- br= zeilenumbruch -->
+        <br>
+
+        <p>ich <br> bin <br> getrennt </p>
+
+
+
+        <!-- paragrafen -->
+        <p>My first paragraph.</p>
+        <p> hallo                 test  </p>
+        <!-- p=text.
+         startet immer in einer neuen lienie. der text wird nicht 
+         getrent bei zu viel text. abstand wird ignoriert-->
+
+
+        <!--bilder mit alternativen text -->
+        <img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+        <!-- 
+        src= bild links oder URL
+
+        alt= alternativer text
+
+        href=  (aka Links)
+         -->
+
+    
+
+        <!--hr=strich -->
+        <hr> 
+
+        <!--Element -->
+        <h1>ich bin ein ganzes element </h1>
+            <!--das ganze ist ein element bis zum ende der zeile
+
+            <h1>=start tag </h1>= end tag
+
+            text= ist ein element content(der weiße text)
+
+            Atribute sintax ..=".."> -->
+
+            <br>
+            <!--br= ein empty element heißt sie haben keinen end tag -->
+
+
+
+            <p>This is a <br> paragraph with a line break.</p> 
+            <!-- <P> </p> ist nicht das selbe auf groß und kleinschreibung achten --> 
+
+
+                <!--links -->
+            <a href=https://www.w3schools.com>Visit W3Schools</a>
+                <!--href=url 
+                ist ein atribut
+                <a+href+url erst nach der Url schließen -->
+
+
+                <!-- bilder -->
+
+                <img src="img_girl.jpg">
+                <img src="https://placehold.co/600x400">
+                <!-- 
+                src=gibt den path von der dartei an (path vom pc oder server z.b file:///Users/s.dumke/Projekte/index.html)
+                oder es wird im internet danach gesucht (alles mit den https:...) 
+                <img= bild dartei -->
+
+
+
+                <!-- titel und alternativer text-->
+
+                <img src="https://placehold.co/600x400" title="Girl with a jacket">
+                <img src="https://placehold.co/600x400" alt="ein platzhalter">
+                <!-- title gibt in den fall den titel vom bild an 
+
+                    <alt>= attribut
+                    alt= ein alternativer text an (für scrrenreader=menschen mit beinträchtigung)
+
+                    <img src="url" alt="alternatetext"> syntax-->
+
+
+
+
+                    <!-- style atrbiut-->
+                    <img src="https://placehold.co/600x400" alt="Girl in a jacket" style="width:500px;height:600px;">
+                    <!--mit dem style atribut kann man die größe anpassen + px anzahl-->
+
+                    <img src="html5.gif" alt="HTML5 Icon" width="128" height="128">
+                        <!--man kann auch atribute her nehmen -->
+                    
+
+                     <!-- <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+                     bilder von website. darfür die volle url in src
+                     
+                    <img src="programming.gif" alt="Computer Man" style="width:48px;height:48px;"> 
+                    das selbe mit gifs
+                     -->
+
+                    <a href="default.asp">
+                    <img src="https://placehold.co/600x400" alt="HTML tutorial" style="width:42px;height:42px;">
+                    </a> 
+                    <!--bilder kann man auch als links benutzen -->
+
+
+
+                    <!-- float-->
+                    <p><img src="https://placehold.co/600x400" alt="Smiley face" style="float:left;width:250px;height:250px;">
+                        The image will float to the right of the text.</p>
+                    <!-- float bestimmt die richtung wo das bild steht -->                        
+                   
+
+
+
+                    <img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+                        <!--bei usemap startet mit einen # -->
+                        <map name="workmap">
+                            <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+                            <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+                            <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+                        </map>
+                        <!-- wichtig bei namen atribut den namen vom usemap atribut 
+                        map tag macht anklickbare bereiche auf den bild
+                        area=klickbare bereiche 
+                        shape=form 
+                        coords= kordinaten auf den bild 
+
+                        - rect
+                        cordinaten werden immer in paaren gelesen 34+44 gehören zumsammen 
+                        heißt wenn wir ein 2 paar machen alles datrin ist anklickbar
+                        - circle
+                        wieder 2 paare aber man gibt den durchmesser vom kreis an
+                        - oval=poly
+                         man muss alle kordinaten bei den ecken angeben
+                        -->
+
+                        <!--<map name="workmap">
+                            <area shape="circle" coords="337,300,44" href="coffee.htm" onclick="myFunction()">
+                          </map>
+                          
+                          <script>
+                          function myFunction() {
+                            alert("You clicked the coffee cup!");
+                          }
+                        </script> 
+                          man kann auch funkzionen einbauen wenn man z.b auf die kaffee tasse drückt
+                          (script ist javaskipt)
+                          funkzion funkzion name(){
+                          was es macht alert z.b (text); 
+                          }
+                        </script>
+                          -->
+                        
+                        <!-- <p style="background-image: url('https://placehold.co/600x400');"> 
+                          hintergrunde sind auch mit bildern möglich
+                         oder im styles element
+                        <style>
+                        p {
+                        background-image: url('https://placehold.co/600x400');
+                        }
+                        </style>-->
+
+                        <picture>
+                            <source media="(min-width: 650px)" srcset="https://placehold.co/600x400">
+                            <source media="(min-width: 465px)" srcset="https://placehold.co/600x400">
+                            <img src="img_girl.jpg">
+                          </picture>
+
+                        <!--
+                        picture tag ist ein elternteil von <img>
+                        vorteil bietet mehr freiraum zum gestallten
+                        source = 
+                        srcset = browser kann bestimmen wie das bild am besten passt
+
+                        -->
+                          
+                        <picture>
+                            <source srcset="img_avatar.png">
+                            <source srcset="img_girl.jpg">
+                            <img src="img_beatles.gif" alt="Beatles" style="width:auto;">
+                          </picture>  
+                            <!-- da nicht jeder browser alle bild datein unterstützt-> nimmt immer das erste was geht. wenn nicht geht er eins weiter runter -->
+
+                         
+                    <a href="https://www.w3schools.com/html/html_links.asp">Hyperlink</a>
+                        <!-- hyperlinks brauchen ein <a= ankehr mussen nach der
+                          url geschlossen werden end tag kommt nach dem text -->
+
+                          <a href="https://www.w3schools.com/html/html_links.asp" target="_blank" >Hyperlink</a>
+                        <!-- target= zum verlinke
+                            _self= im selben fenster wo es aufgerufen wird
+                            _blank= im neuen tab 
+                            _parent= "parent frame" 
+                            _top= -->
+
+                            <!--absolute URL= die ganze web adresse 
+                            relative Urls = ein teil von der url -->
+                            <p><a href="https://www.google.com/">Google</a></p> <!--absolute URL -->
+                            <p><a href="html_images.asp">HTML Images</a></p> <!--relativ url -->
+
+                            <!--Bilder als Links -->
+                            <a href="default.asp"> <!--link -->
+                                <img src="https://placehold.co/600x400" alt="HTML tutorial" style="width:42px;height:42px;">
+                                </a>
+                            <!-- ein bild als link. muss im <a ...> tag drin sein -->
+
+                            <!-- verlinkungen von e-mail adressen. darfür Mailto in das href -->
+                            <a href="mailto:someone@example.com">Send email</a>
+
+
+                            <!--style attribut -->
+                <p style="color: red">rot</p> 
+                    <!--dsa atribut von style hat am meisten prio
+                    !important gibt die wichtigkeit an das er das priorisieren soll -->
+
+                        <!-- <h1 style="background-color:powderblue;">This is a heading</h1> -->
+                        <p style="background-color:tomato;">This is a paragraph.</p>
+                        <p style="font-family:fantasy;"> ich bin eine schrift art </p>
+                        <p style="font-size:400%;">ich bin groß </p>
+                        <h3 style="text-align:center" > mitte </h3>
+                        <h1 style="font:size 60px;">hallo ich bin eine angefasste überschrift</h1>
+                    
+                    <!-- style atribut kann man farbe, größe, schrift art, ausrichtung einstellen
+                      color für die farbe. 
+                      - auch bestimmte paragrafen kann man ändern (hintergrund & text farbe)
+                      - text-align:... bestimmt die ausrichtung
+                      - font-size bestimmt die größe der schrift
+                      -->
+
+
+
+                    <p title="I'm a tooltip">This is a paragraph.</p>
+                    <!-- title gibt texten,bildern usw titel beim rüber gehen -->
+
+                    <p title='John "hallo" Nelson'>fcfc</p>
+                    <p title="John 'ShotGun' Nelson">text</p> <!--2 version -->
+                    <!--  wenn im atribut " " benutz werden dann muss man noch ' einfache verwenden sondst endet der text  -->
+            
+                    <pre>
+                        My Bonnie lies over the ocean.
+                      
+                        My Bonnie lies over the sea.
+                      
+                        My Bonnie lies over the ocean.
+                      
+                        Oh, bring back my Bonnie to me.
+                    </pre>
+                    <!-- pre definiert die text formatierung (lehrzeichen, zeilenumbruch. wichtig auf einrückung achten!) -->
+
+
+
+                    <p><b>fett</b></p>
+                    <p><strong>wichtiger text </strong></p>
+                    <p><em>hervorgehoben</em> </p>
+                    <p><i>kusiv </i> </p>
+                    <p><del> strich im text</del> </p>
+                    <p><small> smoll text</small></p>
+                    <p><mark> markiert</mark> </p>
+                    <p><ins>unterstrichen </ins> </p>
+                    <p><sub>tiefgestellt </sub></p>
+                    <p><sup>hochgestellt </sup> </p>
+                    <!--Schrift arten  -->
+
+
+
+                    <p>Here is a quote from WWF's website:</p>
+                    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+                    For 60 years, WWF has worked to help people and nature thrive. As the world's leading conservation organization, WWF works in nearly 100 countries. At every level, we collaborate with people around the world to develop and deliver innovative solutions that protect communities, wildlife, and the places in which they live.
+                    </blockquote>
+
+                    <p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>                    
+                    
+                    <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+                    
+                    <address>
+                        Written by John Doe.<br>
+                        Visit us at:<br>
+                        Example.com<br>
+                        Box 564, Disneyland<br>
+                        USA
+                        </address>
+
+                        <p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+
+                        <bdo dir="rtl">This text will be written from right to left</bdo>
+                    <!-- 
+                    -blockquoute= lange zitate von einer anderen quelle
+                    - q=kurze zitate   
+                    - abbr= acronym oder abbreviation(abkürzung) für mr., dr. usw
+                    adress= contakt infomationen vom z.b ersteller.
+                    ist in italic schrifart + automatischer br(vorher & nachher) 
+                    -cite= defeniert den titel der arbeit z.b bücher,songs usw italic schrift art
+                    - bdo= text der falsch + rückwärts geschrieben ist
+                    dir= richtung rtl -->
+                    
+                    <!-- titel geben extra infomationen diese werden als tool tips angezeigt -->
+                    <a href="https://www.w3schools.com/html/" title="ich bin ein tooltip"> </a> 
+                
+                    <h2 id="C4">Chapter 4</h2>
+                    <a href="html_demo.html#C4">Jump to Chapter 4</a> <!-- auf das # im href aupassen -->
+                    
+                        <table style="width: 60%;">
+                            <caption>überschrift</caption>
+                            <tr>
+                                <th style="width:80%">1</th>
+                                <th>2</th>
+                                <th>3</th>
+                            </tr>
+
+                            <!-- <tr>
+                                <th rowspan="2">j </th>
+                                <td>i</td>
+                            </tr> -->
+
+                          <!--  <tr>
+                                <td colspan="2"> hallo </td>
+                                <td> text</td>
+                            </tr> --> 
+
+                            <tr style="height:200px">
+                                <td>a</td>
+                                <td>b</td>
+                                <td>c</td>
+                            </tr>
+                        </table>
+                    
+                        <!-- <table>
+                            <colgroup>
+                              <col span="2" style="background-color: #D6EEEE">
+                            </colgroup>
+                            <tr>
+                              <th>MON</th>
+                              <th>TUE</th>
+                              <th>WED</th>
+                              <th>THU</th>
+
+                            <table>
+                                <colgroup>
+                                <col span="1" style="background-color: brown;">
+                                </colgroup>
+                              <td>fr</td>
+                            </table>
+                            <!-- html kann man boxen durch
+                             Colgroup anpassen
+                             <col gibt darbei die spalten anzahl an
+                             
+                             es gibt wenige einstellungen die man in html zur darstellung verwenden kann
+                             width, visibilty, background und border
+                             -->
+                            
+                             <!-- <table>
+                                <colgroup>
+                                    <col span="3">
+                                  <col span="2" style="background-color: pink">
+                                </colgroup>
+                                <tr>
+                                  <th>MON</th>
+                                  <th>TUE</th>
+                                  <th>WED</th>
+                                  <th>THU</th>
+                                    einzelnde tabellen  boxen kann man auch einfärben
+                                      bei einzelnden nicht gefärbten einfach nix einfügen. wenn es nicht gemacht wird dann werden die ersten beiden boxen eingefärbt-->
+
+                    <!--
+                    caption = überschrift der tabelle
+                    table = tablle
+                    <th> tabelen überschrift.fett geschreiben
+                    <td> steht für Table data
+                    <tr>sind trennungen. also wie viel in einer zeile enthalten ist
+                    - die % bedeuten wie groß das element ist in dem es sich befindet. hier orientiert es sich am body also die größe der website. 
+                    es bleibt immer gleich groß egal wie groß der bildschirm eingstellt ist
+                    - die spalten lassen sich auch von der größe ändern Style=größe (jede spalte)
+                    - <td colspan="2"> hallo </td> colspan="wie weit die spalte geht" bestimmt die spanne der spalte
+                    rowspan="anzahl der spalten größe".-->
+
+                    <!-- Listen-->
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                        </ul>
+                            <!--unsotierte liste
+                            - ul = unsotierte liste
+                            li = listenelement
+                            -->
+
+                        <ol>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>1</li>
+                        </ol>
+                        <!--sotierte liste
+                        ol = listen element
+                         -->
+
+                        <!--beschreibungs liste -->
+                         <dl>
+                         <dt>Coffee</dt>
+                         <dd>- black hot drink</dd>
+                         <dt>Milk</dt>
+                         <dd>- white cold drink</dd>
+                       </dl>
+                       <!--dt= definiert den name
+                        dd= beschreibung des text -->
+
+                        <ul style="list-style-type:circle;">
+                            <li>Coffee</li>
+                            <li>Tea</li>
+                            <li>Milk</li>
+                          </ul>
+
+                          <!-- <ul>
+                            <li>Coffee</li>
+                            <li>Tea
+                              <ul>
+                                <li>Black tea</li>
+                                <li>Green tea</li>
+                              </ul>
+                            </li>
+                            <li>Milk</li>
+                          </ul> -->
+
+                          
+                          
+
+                          <!--listen punkte kann man anpassen 
+
+                            none>
+                            square
+                            circle
+                            
+                            man kann listen elemente verschachteln heißt eine liste in einer liste diese ist weiter rechts
+                            -->
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#news">News</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                                <li><a href="#about">About</a></li>
+                              </ul>
+                              <!--  man kann links einbetten in listen-->
+
+                              <ol type="I">
+                                <li>o</li>
+                                <li>T</li>
+                                <li>M</li>
+                              </ol>
+
+                              <!--die zahlen kann man anpassen in einer liste
+                              1 nummerierte nummern
+                            A bustaben Groß
+                            a kleingeschriebene
+                            I & i romische zahlen groß oder klein-->
+
+                            <ol start="10">
+                                <li>1</li>
+                                <li>2</li>
+                            </ol>
+                            <!-- zum verändern der zählungs nummer -->
+
+                            <!-- Block elemente-->
+
+                            <p>block element</p>
+                            <!--p ist ein block element da es in einer neuen line startet -->
+                            <Div> block element 2</Div>
+                            <!-- div definiert eine gruppe oder ein abteil
+                             jedes start ist im prinzip ein block element 
+                            -->
+
+
+
+                            <div style="background-color:black;color:white;padding:20px;">
+                                <h2>London</h2>
+                                <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+                              </div>
+                              <!-- andere atribute  wie style, id, class treten oft auf-->
+
+                            
+                            <!-- inline elemente-->
+
+                            <span>Hello World</span>
+                            <!-- span tag nimmt der text nur so viel wie er braucht. heißt weniger abstand zwischen den texten. 
+                             dazu kann span mit weiteren tags verbunden werden
+                             span element kann wie beim div element mit den atributen kombiniert werden-->
+                            
+<br>
+<br>
+
+                             <!-- div elemente -->
+                            <span> Lorem Ipsum <div>I am a div</div> dolor sit amet.</span>
+
+                             <!--Blockelement und trennt bereiche vom code.
+                             nach dem element entsteht ein zeilenumbruch
+
+                             mehre div elemente sind möglich
+                             
+                             werden auch genutzt um gruppen einer seite zu bestimmen
+                             diese kann man dardurch anpassen das sie schöner ausgerichtet sind im nachhinein-->
+
+                             <div class="test">
+                                <h2>London</h2>
+                                <p>London is the capital city of England.</p>
+                                <p>London has over 13 million inhabitants.</p>
+                              </div>
+                              
+
+                              <!-- class-->
+                              <div class="test">
+                                <h2> überschrift</h2>
+                                <p>block 1 </p>
+                              </div>
+
+                              <div class="test">
+                                <h2>überschrift</h2>
+                                <p> block 2 </p>
+                              </div>
+
+                              <h1>My <span class="note">Important</span> Heading</h1>
+                                <p>This is some <span class="note">important</span> text.</p>
+                            <!--
+                              klassen sind beschreibungen für elemente. 
+                              class="class name" so wird eine klasse zugewiesen
+
+
+                              . = period 
+                              diese folgen den klassen namen
+                              diese kann man auch noch individuell anpassen .class name= funkzion 
+
+
+                              Mehre klassen-->
+
+                              <h2 class="klassea klasseb">ghg </h2>
+                              <p class="klasseb"> test</p>
+                              <!--man kann einen element mehre klassen geben 
+                              diese nur durch ein lehrzeichen freilassen dann die 2 klasse-->
+
+                              <!-- ID-->
+
+                              <h1 id="myHeader">My Header</h1>
+                              <!-- MUSS EINZIGARTIG sein.
+                                    darf mit KEINER zahl beginnen KEIN lehrzeichen
+                                    für die funkzion 
+
+                                    #name {
+                                    styles element
+                                    }
+                                    
+                              -->
+
+                              <iframe src="https://www.w3schools.com/html/html_iframe.asp"> </iframe>
+                              <!--
+                             - eine seite in einer seite
+                              in der "theorie" könnte man jetzt die seite sehen 
+                              ist anpassbar mit dem styles atribut
+                              -->
+
+
+                              <!-- java script -->
+                              <div id="demo">halolo</div>
+                              <script>
+                                document.getElementById("demo").innerHTML = '<p class="klasseb"> test</p>';
+                        
+                                </script>
+                                
+                            <!-- wird verwendet für:
+                                - bild veränderung
+                                - form veränderungen
+                                - dynamische vernderung
+                                
+                                script = für java script 
+                                document.getElementById()= gib das was ich reinschreibe in ID aus
+                                innerHTML = gib den text aus
+                                InnerHTMl= der weiße text 
+                                das heißt alles was oben im innerHTML code steht wird ignoriert
+                                ''= für text
+                                ; = zum benden
+                                . für funktzion
+                                
+                                es wird also das was in der klasse festgelegt wurde ausgegeben + den text
+                            -->
+
+                            <Div id="a"></Div>
+
+                            <script>
+                            document.getElementById("a").style.fontSize = "25px";
+                            document.getElementById("a").style.color = "red";
+                            document.getElementById("a").style.backgroundColor = "yellow";
+                        </script>
+                        <!--zum verändern vom aussehen -->
+
+                        <img id="image">
+                        <!-- start tag achten 
+                         start tag was ist es
+                         id wird muss das jeweilige benutzung text, bild usw
+                         und dsa wird ersetzt durch das bild in dem fall-->
+                        <script>
+                        document.getElementById("image").src = "https://placehold.co/600x400";
+                    </script>
+
+                     <picture>
+                        <source srcsetc="https://placehold.co/600x400" media="(max-width: 50px)">
+                        <img src="https://placehold.co/600x400">
+                    </picture>
+                    <!-- pitcure elemt kann man größen technisch anpassen -->
+
+                    <h1 style="font-size:5vw">Hello World</h1>
+                    <!--vw definiert die größe des viewport-->
+
+                    <p class="left">a</p>
+                    <p class="main">b</p>
+                    <p class="right">c</p>
+
+
+    </body>
+</html>

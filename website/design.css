@@ -1,0 +1,347 @@
+body {
+    background-color: rgb(233, 223, 223);
+}
+
+.platzhalterüberschrift {
+    font-size: 150%;
+    padding: 4px;
+    color: rgb(47, 37, 37);
+    text-align: center;
+    background-color: rgb(178, 93, 83);
+}
+
+.teilüberschrift {
+    font-size: 50px;
+}
+
+.überschrift {
+    font: italic;
+}
+
+.text {
+    text-align: justify;
+}
+
+* {
+    color: rgb(10, 8, 8);
+}
+
+p {
+    text-align: center;
+    font-size: 25px;
+    line-height: 25px;
+}
+
+/* überschrift und teilüberschrift größen*/
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2em;
+}
+
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2em;
+}
+
+/* Button */
+.button {
+    background-color: rgb(178, 93, 83);
+    color: rgb(47, 37, 37);
+    text-align: center;
+    float: left;
+    padding: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-grow: 1 ;
+}
+
+.button:hover {
+    background-color: rgb(131, 93, 89);
+}
+
+/* button größe */
+.button {
+    
+    border-radius: 0px;
+}
+
+.disabled {
+    background-color: rgb(131, 93, 89);
+    cursor: not-allowed;
+}
+
+hr {
+    border: solid;
+    color: rgb(220, 102, 89);
+    border-width: 2px;
+}
+
+/*ausklappbar */
+.topnav {
+    background-color: rgb(178, 93, 83);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 25px;
+    text-decoration: none;
+    font-size: 25;
+}
+
+.topnav a:hover {
+    background-color: rgb(131, 93, 89);
+}
+
+.topnav a.active {
+    background-color: rgb(131, 93, 89);
+}
+
+.topnav .icon {
+    display: none;
+}
+
+/*logos*/
+.logo1 {
+    margin: 100px;
+    padding: 1%;
+    border: 3px solid rgb(219, 151, 144);
+    background-color: rgb(219, 151, 144);
+    border-radius: 45px;
+    text-align: center;
+}
+
+.logo1 img {
+    max-width: 450px;
+    border-radius: 45px;
+    width: 100%;
+}
+
+/*chibis*/
+.chibi1 {
+    margin: 50px;
+    padding: 1%;
+    border: 2px solid rgb(219, 151, 144);
+    border-radius: 45px;
+    background-color: rgb(219, 151, 144);
+    text-align: center;
+}
+
+.chibi1 img {
+    max-width: 420px;
+    border-radius: 45px;
+    width: 100%;
+}
+
+.chibi2 {
+    margin: 50px;
+    padding: 1%;
+    border: 3px solid rgb(219, 151, 144);
+    border-radius: 45px;
+    background-color: rgb(219, 151, 144);
+    text-align: center;
+}
+
+.chibi2 img {
+    max-width: 420px;
+    width: 100%;
+    border-radius: 45px;
+}
+
+/*artworks */
+
+.grid img {
+    width: 100%;
+}
+
+.artwork1 {
+    margin: 50px;
+    padding: 1px;
+    border: 3px solid rgb(219, 151, 144);
+    border-radius: 45px;
+    background-color: rgb(219, 151, 144);
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(47, 37, 37);
+}
+
+.artwork1 img {
+    max-width: 420px;
+    border-radius: 45px;
+}
+
+
+.artwork2 {
+    margin: 50px;
+    padding: 1px;
+    border: 3px solid rgb(219, 151, 144);
+    background-color: rgb(219, 151, 144);
+    border-radius: 45px;
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(47, 37, 37);
+}
+
+.artwork2 img {
+    max-width: 420px;
+    border-radius: 45px;
+}
+
+.artwork3 {
+    margin: 50px;
+    padding: 1px;
+    border: 3px solid rgb(219, 151, 144);
+    border-radius: 45px;
+    background-color: rgb(219, 151, 144);
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(47, 37, 37);
+}
+
+.artwork3 img {
+    max-width: 420px;
+    border-radius: 45px;
+}
+
+.artwork4 {
+    margin: 50px;
+    padding: 1px;
+    border: 3px solid rgb(219, 151, 144);
+    border-radius: 45px;
+    background-color: rgb(219, 151, 144);
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(47, 37, 37);
+}
+
+.artwork4 img {
+    max-width: 420px;
+    border-radius: 45px;
+}
+
+.artwork5 {
+    margin: 50px;
+    padding: 1px;
+    border: 3px solid rgb(219, 151, 144);
+    border-radius: 45px;
+    background-color: rgb(219, 151, 144);
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(47, 37, 37);
+}
+
+.artwork5 img {
+    max-width: 420px;
+    border-radius: 45px;
+}
+
+.artwork6 {
+    margin: 50px;
+    padding: 1px;
+    border: 3px solid rgb(219, 151, 144);
+    border-radius: 45px;
+    background-color: rgb(219, 151, 144);
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(47, 37, 37);
+}
+
+.artwork6 img {
+    max-width: 420px;
+    border-radius: 45px;
+}
+
+.artwork7 {
+    margin: 50px;
+    padding: 1px;
+    border: 3px solid rgb(219, 151, 144);
+    border-radius: 45px;
+    background-color: rgb(219, 151, 144);
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(47, 37, 37);
+}
+
+.artwork7 img {
+    max-width: 420px;
+    border-radius: 45px;
+}
+
+.artwork8 {
+    margin: 50px;
+    padding: 1px;
+    border: 3px solid rgb(219, 151, 144);
+    border-radius: 45px;
+    background-color: rgb(219, 151, 144);
+    text-align: center;
+    box-shadow: 5px 5px 5px rgb(47, 37, 37);
+}
+
+.artwork8 img {
+    max-width: 420px;
+    border-radius: 45px;
+}
+
+.artwork9 {
+    margin: 50px;
+    padding: 1px;
+    border: 3px solid rgb(219, 151, 144);
+    border-radius: 45px;
+    background-color: rgb(219, 151, 144);
+    text-align: center;
+    float: left;
+    box-shadow: 10px 10px 15px rgb(120, 93, 75);
+    box-shadow: 5px 5px 5px rgb(47, 37, 37);
+}
+
+.artwork9 img {
+    max-width: 420px;
+    border-radius: 45px;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+}
+
+
+@media screen and (max-width: 790px) {
+    .nav {
+        flex-direction: column;
+    }
+
+    .grid {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .topnav input:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive input {
+        display: block;
+    }
+
+}

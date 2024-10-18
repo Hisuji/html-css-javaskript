@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taschenrechner</title>
+  <style>
+    /* General body styling */
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f3f4;
+      margin: 0;
+      transition: background-color 0.3s ease;
+
+    }
+
+    /* Main calculator container */
+    .calculator {
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      width: 340px;
+
+    }
+
+    /* Display area for showing calculations */
+    .display {
+      width: 100%;
+      padding: 20px;
+      border: none;
+      background-color: #333;
+      color: white;
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-align: right;
+      border-radius: 10px;
+      box-sizing: border-box;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Grid layout for calculator buttons */
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    /* General styling for all buttons */
+    button {
+      padding: 20px;
+      font-size: 24px;
+      border: none;
+      border-radius: 10px;
+      background-color: #e0e0e0;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      outline: none;
+    }
+
+    /* Button hover and click interactions */
+    button:hover {
+      background-color: #b8c3c5;
+    }
+
+    button:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Operator button styles */
+    .operator {
+      background-color: #ff9500;
+      color: white;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Active operator highlighting */
+    .operator.active {
+      background-color: #ffcc80;
+      box-shadow: 0 4px 10px rgba(255, 204, 128, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Equal button style */
+    .equal {
+      background-color: #34c759;
+      color: white;
+    }
+
+    .equal:hover {
+      background-color: #2fae49;
+    }
+
+    /* Zero button spans two columns */
+    .zero, #ac {
+      grid-column: span 2;
+    }
+
+    .buttons button {
+      height: 70px;
+    }
+
+    /* Responsive display style */
+    .display {
+      height: 80px;
+      font-size: 38px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Active key style */
+    button.key-active {
+      background-color: #d0d0d0;
+      transform: scale(0.98);
+      transition: background-color 0.2s, transform 0.1s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="calculator">
+    <input type="text" id="display" class="display" disabled value="0" />
+    <div class="buttons">
+      <button id="ac" onclick="reset()">AC</button>
+      <button class="operator" id="sqrt" onclick="setzeOperator('√')" >√</button>
+      <button class="operator" id="divide" onclick="setzeOperator('/')" >/</button>
+      <button id="seven" onclick='einfuegen(7)'>7</button>
+      <button id="eight" onclick='einfuegen(8)'>8</button>
+      <button id="nine" onclick='einfuegen(9)'>9</button>
+      <button class="operator" id="mulitply" onclick="setzeOperator('*')">*</button>
+      <button id="four" onclick='einfuegen(4)' >4</button>
+      <button id="five" onclick='einfuegen(5)'>5</button>
+      <button id="six" onclick='einfuegen(6)'>6</button>
+      <button class="operator" id="subtract" onclick="setzeOperator('-')">-</button>
+      <button id="one" onclick='einfuegen(1)'>1</button>
+      <button id="two" onclick='einfuegen(2)'>2</button>
+      <button id="three" onclick='einfuegen(3)'>3</button>
+      <button class="operator" id="sum" onclick="setzeOperator('+')">+</button> <!-- operator einen wert geben -->
+      <button class="zero" id="zero" onclick='einfuegen(0)'>0</button>
+      <button id="point" onclick='einfuegen(".")'>.</button>
+      <button class="equal" id="equals" onclick="ergebnis()">=</button>
+    </div>
+  </div>
+  <script type="text/javascript">
+    const display = document.getElementById('display');
+    let aktuellerWert = '0';
+    let vorherigerWert = null;
+    let operator = null; // null macht nix = leer
+
+    function einfuegen(zahl){
+      if (aktuellerWert == '0'){
+        aktuellerWert = ''; //  nach dem wird der wert genullt
+      }
+      aktuellerWert += zahl;
+      display.value = aktuellerWert; // wert wird im display angezeigt
+    }
+
+    function reset(){ // wert wieder auf 0 setzten
+      aktuellerWert = '0';
+      display.value = aktuellerWert; // im display wird die rechnung angezeicht
+      vorherigerWert = null;
+      operator = null;
+    }
+
+    function setzeOperator(zeichen){ // parameter wird mit dem jeweiligen zeichen gesetzt
+      vorherigerWert = aktuellerWert;
+      operator = zeichen;
+      aktuellerWert= '';
+    }
+
+    function ergebnis(){
+      let zahl1 = parseFloat(vorherigerWert); // paseFloat macht aus nummern strings. (aktuellerWert) wird hier zu einen string ( () welchen wert man zum string macht)
+      let zahl2 = parseFloat(aktuellerWert);  // hier macht man es zu einen string damit man mehre zahlen zusammen rechnen kann. wenn es nicht da ist werden sondst nur einzelnde zahlen zusammen gerechnet.
+      let ergebnis = 0; // ab hier werden die Operatoren zusammen gerechnet mit dem jeweiligen Operatoren symbol
+      if ( '+' == operator){
+        ergebnis = zahl1 + zahl2;
+      }
+
+      if ( '-' == operator){
+        ergebnis = zahl1 - zahl2;
+      }
+
+      if ('*' == operator){
+        ergebnis = zahl1 * zahl2;
+      } 
+
+      if ('√' == operator){
+       ergebnis = Math.sqrt(zahl1) // wurzeln ziehen mit math sqrt = square root
+      } 
+
+      if ('/' == operator){
+        ergebnis = zahl1 / zahl2;
+      } 
+
+      aktuellerWert = ergebnis.toString(); 
+      vorherigerWert = null; 
+      operator = null;
+      display.value = aktuellerWert;
+    }
+  </script>
+</body>
+
+</html>

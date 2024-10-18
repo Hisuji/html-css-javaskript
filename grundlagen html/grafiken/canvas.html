@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!--rechteck -->
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+
+</canvas>
+
+<script> /* strich durch das rechteck */
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d"); /* nimmt sich variable c */
+    ctx.moveTo(0,0); /* wo der strich anfängt */
+    ctx.lineTo(200,100); /* wo der strich aufhört */
+    ctx.stroke();
+    </script>
+
+<br>
+<!--kreis -->
+<canvas id="kreis" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
+    
+    <script>
+    var c = document.getElementById("kreis");
+    var ctx = c.getContext("2d");
+    ctx.beginPath(); /* anfang festlegen */
+    ctx.arc(95,50,40,0,2*Math.PI); /*kreis */
+    ctx.stroke(); /* ende */
+    </script> 
+<br>
+<!-- text anpassen im canvas -->
+<canvas id="text" width="200" height="100">
+    Your browser does not support the HTML canvas tag.</canvas>
+    
+
+<script> 
+    var c = document.getElementById("text");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.fillText("Hello World", 10, 50); /* filltext ist wie der text optisch ausschauen soll */
+    </script>
+
+<br>
+
+<canvas id="text2" width="200" height="100"></canvas>
+    
+    <script>
+    var c = document.getElementById("text2");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.strokeText("Hello World",10,50); /* stonk text ist aussehen */
+    </script>
+<br>
+
+<canvas id="farbetransparent" width="200" height="100" ></canvas>
+    
+    <script>
+    var c = document.getElementById("farbetransparent");
+    var ctx = c.getContext("2d");
+   
+// color stop definiert ab wann die farbe z.b aufhören soll hier ab der hälfte.
+    var grd = ctx.createLinearGradient(0,0,200,0); // linear definiert wie weit in der mitte oder außen die verteilung ist
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+// Fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10,10,150,80); // größe von der farbe
+    </script>
+
+<br>
+<!--andere variante -->
+<canvas id="weniger" width="200" height="100"></canvas>
+    
+    <script>
+    var c = document.getElementById("weniger");
+    var ctx = c.getContext("2d");
+    
+    var grd = ctx.createRadialGradient(75,50,5,90,60,100); // radial definiert den kreis in der mitte + die größe
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+    
+    // Fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10,10,150,80);
+    </script>
+    
+
+
+    <!--normale bild dartei -->
+    
+    <p>Image to use:</p>
+    <img id="scream" src="https://placehold.co/600x400" alt="The Scream" width="220" height="277">
+
+    <p>Canvas to fill:</p>
+    <canvas id="dasbild" width="250" height="300"
+    style="border:1px solid #d3d3d3;">
+    </canvas>
+
+    <p><button onclick="dasbild()">Try it</button></p>
+
+    <script>
+    function dasbild() {
+    var c = document.getElementById("dasbild");
+    var ctx = c.getContext("2d");
+    var img = document.getElementById("scream");
+    ctx.drawImage(img,10,10);
+    }
+    </script>
+
+<!-- canvas kann texte anpassen farben anpassen und bilder raufpacken -->
+
+</body>
+</html>

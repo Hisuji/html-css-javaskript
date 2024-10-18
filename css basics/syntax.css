@@ -1,0 +1,10 @@
+h1 {font-family: arial;color: aquamarine;}
+/*
+h1= selector = welches tag man ändern möchte
+font-family: arial; = declaration = was man machen möchte z.b farbe ändern text größe usw
+
+jede declaration hat ein
+property = was möchte man verändern z.b color, text größe usw
+value bestimmt den wert der property
+
+*/

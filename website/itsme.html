@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<htm>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> portfolio</title>
+        <link rel="stylesheet" href="design.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+
+    <div class="platzhalterüberschrift"> <!-- headline ganz oben -->
+        <h1>hisu´s art galerie</h1>
+    </div>
+
+    <div class="topnav" id="myTopnav" class="nav">  <!--button liste+ link-->
+        <input type="button" class="button me disabled" onclick="document.location='itsme.html'" value="this is me">
+        <input type="button" class="button chibi" onclick="document.location='chibis.html'" value="chibis">
+        <input type="button" class="button artwork" onclick="document.location='artwork.html'" value="artwork">
+        <input type="button" class="button logo" onclick="document.location='logos.html'" value="logo">
+        <input type="button" class="button emote" onclick="document.location='emote.html'" value="emotes">
+        <a href="javascript:void(0);" class="icon" onclick="openMenu()">
+            <i class="fa fa-bars"></i>
+            </a>
+    </div>
+
+    <script>
+        function openMenu() {
+            const myTopnav = document.getElementById("myTopnav")
+            myTopnav.classList.toggle('responsive')
+        }
+    </script>
+
+    <section>
+        <h2 class="teilüberschrift"> Über mich</h2>
+    </section>
+    <hr>
+
+    <p class="text">hali hallöchen das hier ist meine art galerie</p>
+    <p class="text"> ich zeichne seit 2017 rum und streame neben bei noch als vtuber </p>
+    <br>
+    <!-- bild irgentwann einfügen-->
+     <br>
+    </body>
+
+
+    <footer>
+        <hr>
+        <br>
+    </footer>
+
+</html>

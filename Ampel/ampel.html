@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset='UTF-8'>
+<title>Ampel</title>
+<link rel='stylesheet' href='ampel.css'>
+</head>
+
+<body>
+    <div class='Ampel' id ='ampel'>
+        <div class='ampelrot an' id='Ampel-rot'></div>
+        <div class='ampelorange ' id='orange-Ampel'></div>
+        <div class='ampelgruen' id='gruen-Ampel'></div>
+    </div>
+
+    <!--ampel 2-->
+    <div class='Ampel' id ='ampel2'>
+        <div class='ampelrot an' id='Ampel-rot2'></div>
+        <div class='ampelorange' id='orange-Ampel2'></div>
+        <div class='ampelgruen' id='gruen-Ampel2'></div>
+    </div>
+
+    <button id='knopf' onclick='umschalten(); umschalten2()'>ampel umschalten</button>
+
+    <script>
+        // variabeln definieren
+        const delay = 3000; // zeit zwischen den licht wechsel
+
+        let ampelIstRot = true;
+        let timer = null;
+
+        let ampelIstRot2 = true;
+        let timer2 = null;
+
+        let index = 0;
+        
+        const ampelRot = document.querySelector('#Ampel-rot')
+        const ampelOrange = document.querySelector('#orange-Ampel')
+        const ampelGruen = document.querySelector('#gruen-Ampel')
+
+        
+
+
+        // ampel 1
+
+        // timer setzen
+        function umschalten() {
+            if(timer != null) { //  wenn timer nicht null ist dann clear den timer
+            clearTimeout(timer) 
+            }
+
+            if(ampelIstRot) {
+
+            // von rot auf grun wechsel
+            ampelOrange.classList.add("an")
+            timer = setTimeout(() => {
+                ampelRot.classList.remove("an") 
+                ampelOrange.classList.remove("an")
+                ampelGruen.classList.add("an")  
+
+                ampelIstRot = false
+            }, delay)
+
+            } else {
+                // ampel von grun auf rot
+            ampelGruen.classList.remove("an")  //entpfernt class an bei grün
+            ampelOrange.classList.add("an") // fügt die klasse an bei orang an Orange
+            timer = setTimeout(() => {
+                ampelOrange.classList.remove("an") // entpfernt es
+                ampelRot.classList.add("an") // fügt die klasse an bei rot hinzu
+
+                ampelIstRot = true 
+            }, delay)// gibt eine zeit an die zwischen der code ausführung gewartet wird
+
+            }
+  }
+
+        function umschalten() {
+            if(timer != null) { //  wenn timer nicht null ist dann clear den timer
+            clearTimeout(timer) 
+            }
+
+            if(ampelIstRot) {
+            // von rot auf grun wechsel
+            ampelOrange.classList.add("an")
+            timer = setTimeout(() => {
+                ampelRot.classList.remove("an") 
+                ampelOrange.classList.remove("an")
+                ampelGruen.classList.add("an")  
+
+                ampelIstRot = false
+            }, delay)
+
+            } else {
+                // ampel von grun auf rot
+            ampelGruen.classList.remove("an")  //entpfernt class an bei grün
+            ampelOrange.classList.add("an") // fügt die klasse an bei orang an Orange
+            timer = setTimeout(() => {
+                ampelOrange.classList.remove("an") // entpfernt es
+                ampelRot.classList.add("an") // fügt die klasse an bei rot hinzu
+
+                ampelIstRot = true 
+            }, delay)// wird wiederholt am ende
+
+            }
+  }
+    
+    // appel 2 
+        const ampelrot2 = document.querySelector('#Ampel-rot2')
+        const ampelorange2 = document.querySelector('#orange-Ampel2')
+        const ampelgruen2 = document.querySelector('#gruen-Ampel2')
+
+        function umschalten2() {
+            if(timer2 != null) { //  wenn timer nicht null ist dann clear den timer
+            clearTimeout(timer2) 
+            }
+
+            if(ampelIstRot2) {
+            // von rot auf grun wechsel
+            ampelorange2.classList.add("an")
+            timer = setTimeout(() => {
+                ampelrot2.classList.remove("an") 
+                ampelorange2.classList.remove("an")
+                ampelgruen2.classList.add("an")  
+
+                ampelIstRot2 = false
+                
+            }, delay)
+
+            } else {
+                // ampel von grun auf rot
+            ampelgruen2.classList.remove("an")
+            ampelorange2.classList.add("an")
+            timer2 = setTimeout(() => {
+                ampelorange2.classList.remove("an")
+                ampelrot2.classList.add("an")
+
+                ampelIstRot2 = true 
+            }, delay)
+
+            }
+  }
+
+        function umschalten2() {
+            if(timer2 != null) {
+            clearTimeout(timer2) 
+            }
+
+            
+
+             if (ampelIstRot) {
+                // ampel von grun auf rot
+            ampelgruen2.classList.remove("an")
+            ampelorange2.classList.add("an") 
+            timer2 = setTimeout(() => {
+                ampelorange2.classList.remove("an")
+                ampelrot2.classList.add("an") 
+
+                ampelIstRot2 = true 
+            }, delay)
+
+
+            } else {
+
+            // von rot auf grun wechsel
+            
+            ampelorange2.classList.add("an")
+            timer2 = setTimeout(() => {
+                ampelrot2.classList.remove("an") 
+                ampelorange2.classList.remove("an")
+                ampelgruen2.classList.add("an")  
+
+                ampelIstRot2 = false
+            }, delay)
+
+            }
+  }
+
+    </script>
+
+</body>

@@ -1,0 +1,25 @@
+body {
+    background-color: beige;
+}
+/* hintergrund farbe der seite */
+
+h1 {
+    color: cadetblue;
+    text-align: center;
+}
+/* je nach dem welcher tag am anfang da steht definiert es die jeweilige eigenschaft
+hier ist es die überschrift mit einer farbe
+text-algin bestimmt die postion des textes (eher überschrift hier)
+; zum schließen der funkzion
+{} zum schließen wenn es abgeschlossen ist
+*/
+
+p {
+    font-family:verdana;
+    font-size:10px;
+}
+/* 
+font-family bestimmt die text form 
+font-size die größe vom text
+*/
+

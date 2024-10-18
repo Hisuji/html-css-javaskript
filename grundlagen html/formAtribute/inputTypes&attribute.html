@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+     <h2>Password field</h2>
+
+    <p>The <strong>input type="password"</strong> defines a password field:</p>
+    
+    <form action="/action_page.php">
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="pwd">Password:</label><br>
+      <input type="password" id="pwd" name="pwd"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    
+    <p>The characters in a password field are masked (shown as asterisks or circles).</p>
+    
+    <br>
+
+    <h3>Local Date Field</h3>
+
+<p>The <strong>input type="datetime-local"</strong> specifies a date and time input field, with no time zone.</p>
+
+<form action="/action_page.php">
+  <label for="birthdaytime">Birthday (date and time):</label>
+  <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+  <input type="submit" value="Submit">
+</form>
+
+<p><strong>Note:</strong> type="datetime-local" is not supported in Internet Explorer 11.</p>
+
+<br>
+
+<form action="/action_page.php"></form>
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" autofocus><br> <!--autofocus landet nach dem reloaden wieder auf dene textfeld z.b -->
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
+<!-- 
+Imput typen
+<input type="button">           (knopf)
+<input type="checkbox">         (box zum anharken mehre optionen)
+<input type="color">            (farbe)
+<input type="date">             (datum zum auswählen)
+<input type="datetime-local">   (uhrzeit vor ort)
+<input type="email">            (email)
+<input type="file">             (dartei zum auswählen)
+<input type="hidden">           (versteckt )
+<input type="image">            (bild)
+<input type="month">            (auswählen von monat)
+<input type="number">           (nummern)
+<input type="password">         (definiert ein passwort)
+<input type="radio">            (runder knopf)
+<input type="range">            (definiert den start und das ende)
+<input type="reset">            (zum ursprungs zustand)
+<input type="search">           (suche)
+<input type="submit">           (absenden)
+<input type="tel">              (eingabe für telefon nr)
+<input type="text">             (text)
+<input type="time">             (zeit)
+<input type="url">              (link)
+<input type="week">             (woche)
+
+
+attribute
+max & min                       ()
+maxlenght                       (maximale länge z.b von boxen wie viele zeichen in das feld passen)
+checked                         (macht eine checkbox draus (ab und anwähltbar)
+disabled                        (deaktiviert sachen)
+size                            (größe anpassen)
+step                            (ich wie großen abständen)
+required                        (input feld muss ausgefült sein)
+value
+readonly                        (nur zum lesen nicht veränderbar)
+pattern                         (gibt die zeichen aus die nur ausgeben werden sollen. z.b a-c nur oder 1-5
+                                funkzioniert mit text,datum,suche,tel,e-mail und passwort)
+placeholder                     (kurze beschreibung z.b was im textfeld stehen soll) 
+autofocus                       (landet nach dem reloaden wieder auf dene textfel)
+        
+-->

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Visible Option Values</h2>
+
+    <p>Use the size attribute to specify the number of visible values.</p>
+    
+    <form action="/action_page.php">
+      <label for="cars">Choose a car:</label>
+      <select id="cars" name="cars" size="4" multiple>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+      </select><br><br>
+      <input type="submit">
+    </form>
+
+    <form action="/action_page.php">
+        <fieldset>
+          <legend>Personalia:</legend>
+          <label for="fname">First name:</label><br>
+          <input type="text" id="fname" name="fname" value="John"><br>
+          <label for="lname">Last name:</label><br>
+          <input type="text" id="lname" name="lname" value="Doe"><br><br>
+          <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+    <br>
+    
+    <form action="/action_page.php">
+        <input list="browsers">
+        <datalist id="browsers">
+          <option value="Edge">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist>
+    </form>
+    
+    <br>
+
+    <form action="/action_page.php"
+      oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+      0
+      <input type="range"  id="a" name="a" value="50">
+      100 +
+      <input type="number" id="b" name="b" value="50">
+      =
+      <output name="x" for="a b"></output> <!--hier werden zahlen ausgegeben -->
+      <br><br>
+      <input type="submit">
+    </form>
+
+</body>
+</html>
+
+
+
+<!-- 
+<label>     (leichter anklickbar)
+for         (ist die ID für das Imput element)
+
+<input>     (definiert was man haben möchte im type)
+<label>     (etwas leichter anklickbarer machen)
+<select>    (macht eine liste)
+<textarea>  (textfeld)
+rows        (wie wiele zeilen das text feld hat)
+cols        (die größe des text feldes)
+<button>    (knopf)
+oneclick    (klickbar und am besten was er machen soll z. alert)
+<fieldset>  (bestimmt eine gruppe und bringt es in form)
+<legend>    (gibt der gruppe einen namen)
+<datalist>
+<output>    (was es ausgeben soll)
+<option>    (definiert die Optionen der liste vom <select>)
+<optgroup>
+size=""     (definiert die größe z.b der liste wie viele optionen angezeigt werden)
+multiple    (macht mehre optionen möglich tasten combi:mit comand)
+-->

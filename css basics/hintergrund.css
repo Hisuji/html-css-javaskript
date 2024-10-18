@@ -1,0 +1,18 @@
+h1 {
+    background-color: green;
+  }
+  
+  div {
+    background-color: lightblue;
+  }
+  
+  p {
+    background-color: yellow;
+    opacity: 0.3;
+  }
+
+
+  /* hintergrunde sind auch auf einzelnde elemente anpassbar selbest prinzip wie bei background bloß nur bestimmte elemente
+  , exestiert im englischen nicht deswegen . */
+
+/* für morgen fragen klappen background img nur in der html dartei mit styles ?

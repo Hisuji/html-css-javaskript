@@ -1,0 +1,47 @@
+h1 {
+    text-align: center;
+    font-size: 100px;
+}
+
+h2{
+    text-align: center;
+    font-size: 50px;
+}
+
+p,h1,h2,button{
+ color: rgb(57, 47, 47);
+}
+
+button{
+    background-color: #88b2cc;
+    border-style: none;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 45px;
+    font-size: 25px;
+}
+
+.buttonunten{
+    width: 100px;
+    height: 100px;
+}
+
+.knopf{
+width: 650px;
+height: 150px;
+margin: 35px;
+
+}
+
+body{
+    background-color: #e7d4c0;
+}
+
+button:hover{
+    background-color: #658ea9;
+}
+
+.hintergrund , .frageninhalt{
+    background-color: whitesmoke;
+    border-radius: 45px;
+}
