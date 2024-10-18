@@ -12,7 +12,7 @@
     <h1>Text abenteuer</h1>
     
     <div>
-    <button class='start' id="start-knf" value="start" onclick=geschichte()> start</button>
+    <button class='start' id="start-knf" value="start" onclick=start()> start</button>
     </div>
 
     <p id="geschichtstext"></p>
@@ -28,67 +28,142 @@
         <br>
 
 
-    <button id="weiter" onclick= geschichte2(),select()>weiter</button>
-    <button id="weiter2" onclick=>weiter</button>
+    <button id="weiter" onclick=weiter()>weiter</button>
     
     
-    <button id="option1-knf" onclick=antwort()>1.</button>
-    <button id="option2-knf" onclick=antwort2()>2.</button>
-    <button id="option3-knf" onclick=antwort3()>3.</button>
+    <button id="option1-knf" onclick=antwort(0)>1.</button>
+    <button id="option2-knf" onclick=antwort(1)>2.</button>
+    <button id="option3-knf" onclick=antwort(2)>3.</button>
 
     
     <script>
         // array texte. am besten für jeden weg 1 für die übersicht
-        let textausgabe = ['In einem kleinen, malerischen Dorf gab es einen geheimnisvollen Brunnen, der Wünsche erfüllen konnte. Doch die Dorfbewohner wussten, dass jeder Wunsch auch seinen Preis hatte. Eines sonnigen Tages beschloss die junge Mia, den Brunnen aufzusuchen, um ihren sehnlichsten Wunsch zu äußern. ','Als sie den Brunnen erreichte, hörte sie ein sanftes Plätschern und sah eine funkelnde Wasseroberfläche. Sie schloss die Augen und überlegte, was sie sich wünschen sollte. Plötzlich ertönte eine Stimme aus dem Brunnen: „Wähle weise, Mia. Du hast drei Möglichkeiten!“'];
-        let weg1text = ['Mia wählt den Wunsch nach unendlichem Reichtum.„Ich wünsche mir unendlichen Reichtum!“, rief sie voller Überzeugung. Das Wasser im Brunnen begann zu glühen, und goldene Münzen quol aus dem Brunnen. In diesem Moment fühlte sie sich überglücklich. als sie in das dorf ging um sich die teuersten wahren zu kaufen wahren die leute voller neid. da kam plötzlich ein bettler in lumpen und halb erfrohren und fragte ob sie ihm helfen könnte', 'a3', 'a4'];
-        let weg2text = ['b1', 'b2', 'b3'];
-        let weg3text = ['c1', 'c2', 'c3'];
-        let buttonAntwortWeg1 = ['','',''];
-        let buttonAntwortWeg2 = ['','',''];
-        let buttonAntwortWeg3 = ['','',];
+        
+        let texte = [
+            { // 0
+                'text': 'Als sie den Brunnen erreichte, hörte sie ein sanftes Plätschern und sah eine funkelnde Wasseroberfläche. Sie schloss die Augen und überlegte, was sie sich wünschen sollte. Plötzlich ertönte eine Stimme aus dem Brunnen: „Wähle weise, Mia. Du hast drei Möglichkeiten!“',
+                'antworten': [
+                    {
+                        'option': 'Wunsch: Unendlicher Reichtum',
+                        'naechste': 1
+                    },
+                    {
+                        'option': 'Wunsch: Unsterblichkeit',
+                        'naechste': 2
+                    },
+                    {
+                        'option': 'Wunsch: Wahres Glück',
+                        'naechste': 3
+                    },
+                ]
+            },
+            { // 1
+                'text': 'Mia wählt den Wunsch nach unendlichem Reichtum.„Ich wünsche mir unendlichen Reichtum!“, rief sie voller Überzeugung. Das Wasser im Brunnen begann zu glühen, und goldene Münzen quol aus dem Brunnen. In diesem Moment fühlte sie sich überglücklich. als sie in das dorf ging um sich die teuersten wahren zu kaufen wahren die leute voller neid. da kam plötzlich ein bettler in lumpen und halb erfrohren und fragte ob sie ihm helfen könnte',
+                'antworten': [
+                    {
+                        'option': 'aaa',
+                        'naechste': 4
+                    },
+                    {
+                        'option': 'bbb',
+                        'naechste': ''
+                    },
+                    {
+                        'option': 'ddd',
+                        'naechste': ''
+                    },
+                ]
+            },
+            { // 2
+                'text': 'Mia wählt den Wunsch nach Unsterblichkeit',
+                'antworten': [
+                    {
+                        'option': 'asd',
+                        'naechste': ''
+                    },
+                    {
+                        'option': 'sdf',
+                        'naechste': ''
+                    },
+                    {
+                        'option': 'dfg',
+                        'naechste': ''
+                    },
+                ]
+            },
+            { // 3
+                'text': 'Mia wählt den Wunsch nach Glück',
+                'antworten': [
+                    {
+                        'option': 'asd',
+                        'naechste': ''
+                    },
+                    {
+                        'option': 'sdf',
+                        'naechste': ''
+                    },
+                    {
+                        'option': 'dfg',
+                        'naechste': ''
+                    },
+                ]
+            },
+            { // 4
+                'text': 'LOL',
+                'antworten': [
+                    {
+                        'option': 'asd',
+                        'naechste': ''
+                    },
+                    {
+                        'option': 'sdf',
+                        'naechste': ''
+                    },
+                    {
+                        'option': 'dfg',
+                        'naechste': ''
+                    },
+                ]
+            },
+        ];
+        let antworten = [];
+        let antwortZaehler = 0;
+        let aktuelleFrage = 0;
+        let letzteFrage;
     
+        document.getElementById('geschichtstext').style.display = 'none';
 
-            document.getElementById('geschichtstext').style.display = 'none';
-
+        function versteckeOptionenText() {
+            document.getElementById('option1').style.display = 'none';
+            document.getElementById('option2').style.display = 'none';
+            document.getElementById('option3').style.display = 'none';
+        }
+        function versteckeOptionen() {
             document.getElementById('option1-knf').style.display = 'none'; 
             document.getElementById('option2-knf').style.display = 'none';
             document.getElementById('option3-knf').style.display = 'none';
-
-            document.getElementById('ausblenden').style.display = 'none';
-
-            document.getElementById('weiter').style.display = 'none';
-            document.getElementById('weiter2').style.display = 'none';
-
-
-
-        function geschichte(){ // text 1
-
-            document.getElementById('geschichtstext').innerHTML = textausgabe.at(0);
-
-            document.getElementById('start-knf').style.display = 'none';
-            document.getElementById('geschichtstext').style.display = '';
-
-            //document.getElementById('geschichtstext').innerHTML = 'In einem kleinen, malerischen Dorf gab es einen geheimnisvollen Brunnen, der Wünsche erfüllen konnte. Doch die Dorfbewohner wussten, dass jeder Wunsch auch seinen Preis hatte. Eines sonnigen Tages beschloss die junge Mia, den Brunnen aufzusuchen, um ihren sehnlichsten Wunsch zu äußern.';
-            
-            document.getElementById('option1-knf').style.display = 'none'; // hide option für die buttons
-            document.getElementById('option2-knf').style.display = 'none';
-            document.getElementById('option3-knf').style.display = 'none';
-
-            document.getElementById('weiter').style.display = '';
-
         }
-
-        function geschichte2(){ // teil 2 text
-            document.getElementById('geschichtstext').innerHTML = textausgabe.at(1);
-            
+        function zeigeOptionen() {
             document.getElementById('option1-knf').style.display = ''; // show option
             document.getElementById('option2-knf').style.display = '';
             document.getElementById('option3-knf').style.display = '';
-            document.getElementById('weiter').style.display = 'none';
+        }
+        versteckeOptionen();
 
-            document.getElementById('ausblenden').style.display = '';
-            
-            document.getElementById('weiter').style.display = 'none';
+        document.getElementById('ausblenden').style.display = 'none';
+        document.getElementById('weiter').style.display = 'none';
+
+        function start() {
+            document.getElementById('geschichtstext').innerHTML = 'In einem kleinen, malerischen Dorf gab es einen geheimnisvollen Brunnen, der Wünsche erfüllen konnte. Doch die Dorfbewohner wussten, dass jeder Wunsch auch seinen Preis hatte. Eines sonnigen Tages beschloss die junge Mia, den Brunnen aufzusuchen, um ihren sehnlichsten Wunsch zu äußern.';
+            document.getElementById('start-knf').style.display = 'none';
+            document.getElementById('geschichtstext').style.display = '';
+            document.getElementById('weiter').style.display = '';
+        }
+
+        function geschichte() {
+            document.getElementById('geschichtstext').innerHTML = texte[aktuelleFrage].text;
+            select(aktuelleFrage)
+            zeigeOptionen();
         }
 
         function geschichteweg1text(){
@@ -97,87 +172,29 @@
             document.getElementById('geschichtstext').innerHTML = 'test'
         }
 
-        function select(){ // listen texte
-            document.getElementById('option1').innerHTML = 'Wunsch: Unendlicher Reichtum.';
-            document.getElementById('option2').innerHTML = 'Wunsch: Unsterblichkeit.';
-            document.getElementById('option3').innerHTML = 'Wunsch: Wahres Glück'; 
+        function select(index){ // listen texte
+            document.getElementById('option1').innerHTML = texte[index].antworten[0].option;
+            document.getElementById('option2').innerHTML = texte[index].antworten[1].option;
+            document.getElementById('option3').innerHTML = texte[index].antworten[2].option; 
         }
 
         //weg1
-        function antwort(){ // texte bei den auswahl buttons
+        function antwort(optionIndex){ // texte bei den auswahl buttons
+            antwortZaehler++;
+            letzteFrage = aktuelleFrage;
+            aktuelleFrage = texte[aktuelleFrage].antworten[optionIndex].naechste
 
-            document.getElementById('start-knf').style.display = '';
-
-            document.getElementById('geschichtstext').innerHTML = weg1text.at(1);
-
-            //document.getElementById('geschichtstext').innerHTML =;
-        
-            document.getElementById('option1-knf').style.display = 'none';
-            document.getElementById('option2-knf').style.display = 'none';
-            document.getElementById('option3-knf').style.display = 'none';
-
-            document.getElementById('ausblenden').style.display = 'none';
-            document.getElementById('weiter2').style.display = '';
+            geschichte()
         }
 
-        function a(){
-            document.getElementById('geschichtstext').innerHTML = textausgabe.at(2);
-        }
-
-        //2 weg
-        function antwort2(){
-
-                document.getElementById('geschichtstext').innerHTML = textausgabe.at(0);
-
-                //document.getElementById('geschichtstext').innerHTML ='„Du wirst ewig leben, aber deine Lieben werden irgendwann gehen.“';
-        
-                document.getElementById('option1-knf').style.display = 'none';
-                document.getElementById('option2-knf').style.display = 'none';
-                document.getElementById('option3-knf').style.display = 'none';
-
-                document.getElementById('option1').style.display = 'none';
-                document.getElementById('option2').style.display = 'none';
-                document.getElementById('option3').style.display = 'none';
-                
-        }
-
-        function b(){
-            document.getElementById('geschichtstext').innerHTML = textausgabe.at(1);
-        }
-
-        function antwort3(){
-            // text
-            document.getElementById('geschichtstext').innerHTML ='„Du wirst innere Zufriedenheit finden"';
-        
-            //ausblenden
-            document.getElementById('option1-knf').style.display = 'none';
-            document.getElementById('option2-knf').style.display = 'none';
-            document.getElementById('option3-knf').style.display = 'none';
-
-            document.getElementById('option1').style.display = 'none';
-            document.getElementById('option2').style.display = 'none';
-            document.getElementById('option3').style.display = 'none';
-            document.getElementById('weiter').style.display = 'none';
-            
-        }
-
-        function auswahlbutton(){ // button text
-            document.getElementById('').innerHTML = 'Reichtum'
-            document.getElementById('').innerHTML = 'Unsterblichleit'
-            document.getElementById('').innerHTML = 'Glück'
-        }
-
-        
-
-        
         // weitere wege
-        
-        
-        
-        
+        function weiter() {
+            geschichte()
+            document.getElementById('weiter').style.display = 'none';
+            document.getElementById('ausblenden').style.display = '';
+        }
+
         //1 text: In einem kleinen, malerischen Dorf gab es einen geheimnisvollen Brunnen, der Wünsche erfüllen konnte. Doch die Dorfbewohner wussten, dass jeder Wunsch auch seinen Preis hatte. Eines sonnigen Tages beschloss die junge Mia, den Brunnen aufzusuchen, um ihren sehnlichsten Wunsch zu äußern. 
-
-
 
     </script>
 </body>
