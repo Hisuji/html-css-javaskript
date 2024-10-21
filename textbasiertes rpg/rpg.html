@@ -10,38 +10,39 @@
 
 
     <h1>Text abenteuer</h1>
-    
+
     <div>
-    <button class='start' id="start-knf" value="start" onclick=start()> start</button>
+        <button class='start' id="start-knf" value="start" onclick=start()> start</button>
     </div>
 
     <p id="geschichtstext"></p>
 
-    <section  class="entpferneListeElemente" id="ausblenden">
+    <section class="entpferneListeElemente" id="ausblenden">
         <ol>
             <li id="option1"></li>
-            <li  id="option2"></li>
+            <li id="option2"></li>
             <li class="nichtAnzeigen" id="option3"></li>
         </ol>
     </section>
 
-        <br>
+    <br>
 
 
     <button id="weiter" onclick=weiter()>weiter</button>
-    
-    
-    <button id="option1-knf" onclick=antwort(0)>1.</button>
-    <button id="option2-knf" onclick=antwort(1)>2.</button>
-    <button id="option3-knf" onclick=antwort(2)>3.</button>
 
-    
+
+    <button id="option1-knf" onclick="antwort(0)">1.</button>
+    <button id="option2-knf" onclick="antwort(1)">2.</button>
+    <button id="option3-knf" onclick="antwort(2)">3.</button>
+    <button id="ende" onclick=zusammenfassung()>Ende</button>
+
+
     <script>
         // array texte. am besten für jeden weg 1 für die übersicht
-        
+
         let texte = [
             { // 0
-                
+
                 'text': 'Als sie den Brunnen erreichte, hörte sie ein sanftes Plätschern und sah eine funkelnde Wasseroberfläche. Sie schloss die Augen und überlegte, was sie sich wünschen sollte. Plötzlich ertönte eine Stimme aus dem Brunnen: „Wähle weise, Mia. Du hast drei Möglichkeiten!“',
                 'antworten': [
                     {
@@ -67,16 +68,16 @@
                     },
                     {
                         'option': 'den bettler ignorieren',
-                        'naechste': 3 
+                        'naechste': 3
                     },
                     {
                         'option': '',
-                        'naechste': '' 
+                        'naechste': ''
                     },
-                ] 
+                ]
             },
-            
-            
+
+
             { // 2 Reichtum
                 'text': 'Der bettler wahr ihr dankbar für ihre gutherzigkeit und bedankte sich. die anderen dorfbewohner bekamen von Mias reichtum mit und fragten sie nach großzügigengaben',
                 'antworten': [
@@ -94,8 +95,8 @@
                     },
                 ]
             },
-        { //3
-            'text': 'die dorfbewohner disstanzierten sich von mia und wahren neidisch auf ihren reichtum. sie tuschelten vor neid und missgunst. bis sie schließlich kommplet alleine wahr. ENDE',
+            { //3
+                'text': 'die dorfbewohner disstanzierten sich von mia und wahren neidisch auf ihren reichtum. sie tuschelten vor neid und missgunst. bis sie schließlich kommplet alleine wahr. ENDE',
                 'antworten': [
                     {
                         'option': '',
@@ -110,9 +111,9 @@
                         'naechste': ''
                     },
                 ]
-        },
-        { //4
-            'text': 'Mia wurde für ihre gutmütichkeit bei den dorfbewohnern ausgenutzt. das hatte zu folge das sie zwar reich war sie aber keine richtigen freundschaften hatte. ENDE',
+            },
+            { //4
+                'text': 'Mia wurde für ihre gutmütichkeit bei den dorfbewohnern ausgenutzt. das hatte zu folge das sie zwar reich war sie aber keine richtigen freundschaften hatte. ENDE',
                 'antworten': [
                     {
                         'option': '',
@@ -127,11 +128,11 @@
                         'naechste': ''
                     },
                 ]
-        },
+            },
 
-        { //5 unsterblichkeit
-            'text': 'Ich wünsche mir Unsterblichkeit!“, rief sie mit fester Stimme. Der Brunnen begann zu brodeln, und ein sanfter Wind umhüllte sie. Sofort fühlte sie sich stark und voller Energie. Doch im Laufe der Jahre erlebte Mia, wie alle, die sie liebte, starben. Sie lebte in einem ständigen Kreislauf von Verlust und Trauer, während die Welt um sie herum sich veränderte. Die Unsterblichkeit fühlte sich wie eine Last an. ENDE',
-                'antworten':  [
+            { //5 unsterblichkeit
+                'text': 'Ich wünsche mir Unsterblichkeit!“, rief sie mit fester Stimme. Der Brunnen begann zu brodeln, und ein sanfter Wind umhüllte sie. Sofort fühlte sie sich stark und voller Energie. Doch im Laufe der Jahre erlebte Mia, wie alle, die sie liebte, starben. Sie lebte in einem ständigen Kreislauf von Verlust und Trauer, während die Welt um sie herum sich veränderte. Die Unsterblichkeit fühlte sich wie eine Last an. ENDE',
+                'antworten': [
                     {
                         'option': '',
                         'naechste': ''
@@ -145,10 +146,10 @@
                         'naechste': ''
                     }
                 ]
-        },
+            },
 
-        { //6 glück
-            'text': 'Mia entschied sich für das Glück. In dem Moment, als er seinen Wunsch äußerte, umhüllte ihn ein warmes Licht, und eine tiefe Zufriedenheit erfüllte ihr Herz. in den nächsten tagen bemerkte Mia keinen unterscheid sie dachte schon das der brunnen nicht funkzioniert. bis sie zufällig einen geldbeutel auf den boden fand.',
+            { //6 glück
+                'text': 'Mia entschied sich für das Glück. In dem Moment, als er seinen Wunsch äußerte, umhüllte ihn ein warmes Licht, und eine tiefe Zufriedenheit erfüllte ihr Herz. in den nächsten tagen bemerkte Mia keinen unterscheid sie dachte schon das der brunnen nicht funkzioniert. bis sie zufällig einen geldbeutel auf den boden fand.',
                 'antworten': [
                     {
                         'option': 'den geldbeutel bei der polizei als fundsache abgeben',
@@ -163,9 +164,9 @@
                         'naechste': ''
                     },
                 ]
-        },
-        { //7 behalten
-            'text': 'Mia entschloss sich den geldbeutel zu behalten. so neugierig wie sie wahr kuckte sie auch rein und fand abgesehen von einer menge karten ganz viel geld. mia freute sich über den fund. ein paar straßen weiter  sah sie den man der panisch seinen geldbeutel sucht',
+            },
+            { //7 behalten
+                'text': 'Mia entschloss sich den geldbeutel zu behalten. so neugierig wie sie wahr kuckte sie auch rein und fand abgesehen von einer menge karten ganz viel geld. mia freute sich über den fund. ein paar straßen weiter  sah sie den man der panisch seinen geldbeutel sucht',
                 'antworten': [
                     {
                         'option': 'Ihn den geldbeutel zurückgeben',
@@ -180,10 +181,10 @@
                         'naechste': ''
                     },
                 ]
-        },
-        
-        { //8 abgeben ENDE
-            'text': ' Mia entschloss sich den geldbeutel den mann zu geben. der man wahr ihr zu tiefst dankbar und lud sie zum essen ein. die darauf folgenden tage wurde sie mit noch mehr glück gesegnet und Mia lernte das es die kleinen Dinge sind im leben. ENDE',
+            },
+
+            { //8 abgeben ENDE
+                'text': ' Mia entschloss sich den geldbeutel den mann zu geben. der man wahr ihr zu tiefst dankbar und lud sie zum essen ein. die darauf folgenden tage wurde sie mit noch mehr glück gesegnet und Mia lernte das es die kleinen Dinge sind im leben. ENDE',
                 'antworten': [
                     {
                         'option': '',
@@ -198,10 +199,10 @@
                         'naechste': ''
                     },
                 ]
-        },
-        
-        { //9 behalten
-            'text': 'Bist du dir sicher das du den geldbeutel behalten willst ?',
+            },
+
+            { //9 behalten
+                'text': 'Bist du dir sicher das du den geldbeutel behalten willst ?',
                 'antworten': [
                     {
                         'option': 'ja',
@@ -216,9 +217,9 @@
                         'naechste': ''
                     },
                 ]
-        },
-        { //10 behalten ENDE
-            'text': 'Mia behilt den geldbeutel bei sich und freute sich über das geld. allerdings wahr sie unzufrieden im laufe ihres lebens. sie hatte alles was sie wollte aber wahr unzufrieden ENDE.',
+            },
+            { //10 behalten ENDE
+                'text': 'Mia behilt den geldbeutel bei sich und freute sich über das geld. allerdings wahr sie unzufrieden im laufe ihres lebens. sie hatte alles was sie wollte aber wahr unzufrieden ENDE.',
                 'antworten': [
                     {
                         'option': 'wunsche',
@@ -233,9 +234,9 @@
                         'naechste': ''
                     },
                 ]
-        },
-        { //11 abgeben P ENDE
-            'text': 'mia gab den Geldbeutel schweren herzens ab bei der Polizei. der wachmann lobte sie noch für ihr vorbildliches verhalten. ein paar tage später kam der mann zu ihr und erfüllte ihr einen kleinen Wunsch. Mia lernte das es die kleinen Dinge sind im leben. ENDE ',
+            },
+            { //11 abgeben P ENDE
+                'text': 'mia gab den Geldbeutel schweren herzens ab bei der Polizei. der wachmann lobte sie noch für ihr vorbildliches verhalten. ein paar tage später kam der mann zu ihr und erfüllte ihr einen kleinen Wunsch. Mia lernte das es die kleinen Dinge sind im leben. ENDE ',
                 'antworten': [
                     {
                         'option': '',
@@ -250,45 +251,26 @@
                         'naechste': ''
                     },
                 ]
-        },
+            },
 
-
+            
         ];
-        let antworten = [];
+        var antworten = [];
         let antwortZaehler = 0;
         let aktuelleFrage = 0;
         let letzteFrage;
-    
+
         document.getElementById('geschichtstext').style.display = 'none';
 
         function versteckeOptionenText() {
             document.getElementById('option1').style.display = 'none';
             document.getElementById('option2').style.display = 'none';
             document.getElementById('option3').style.display = 'none';
-
-        /*let LeereListenElemente = document.querySelectorAll('ausblenden');
-            // wenn ul '' dann remove ul element
-            for ( i = 0;i < LeereListenElement.length; ){
-            //remove
-            }*/
-            }
-            
-
-
-        
-             /*(document.getElementsByTagName('ol')){
-                        
-                        
-                        let i = 0; i < ausblenden.length; i++
-                    }*/
-
-        
-        function versteckeOptionen() {
-            document.getElementById('option1-knf').style.display = 'none'; 
-            document.getElementById('option2-knf').style.display = 'none';
-            document.getElementById('option3-knf').style.display = 'none';
         }
-        function versteckebutton() {
+
+        function versteckeOptionen() {
+            document.getElementById('option1-knf').style.display = 'none';
+            document.getElementById('option2-knf').style.display = 'none';
             document.getElementById('option3-knf').style.display = 'none';
         }
 
@@ -296,8 +278,9 @@
             document.getElementById('option1-knf').style.display = ''; // show option
             document.getElementById('option2-knf').style.display = '';
             document.getElementById('option3-knf').style.display = '';
+
         }
-      
+
         versteckeOptionen();
         document.getElementById('ausblenden').style.display = 'none';
         document.getElementById('weiter').style.display = 'none';
@@ -315,26 +298,18 @@
             zeigeOptionen();
         }
 
-        function geschichteweg1text(){
+        function geschichteweg1text() {
             document.getElementById('weiter').style.display = 'none';
             document.getElementById('geschichtstext').innerHTML = 'test'
         }
 
-        function select(index){ // listen texte
+        function select(index) { // listen texte
             document.getElementById('option1').innerHTML = texte[index].antworten[0].option; //nimmt den index von antwort und gibt ihnen
             document.getElementById('option2').innerHTML = texte[index].antworten[1].option;// und gibt ihnen 0-2
-            document.getElementById('option3').innerHTML = texte[index].antworten[2].option; 
+            document.getElementById('option3').innerHTML = texte[index].antworten[2].option;
         }
 
         // wenn Option '' dann option hide
-
-        function antwort(optionIndex){ // texte bei den auswahl buttons
-            antwortZaehler++;
-            letzteFrage = aktuelleFrage;
-            aktuelleFrage = texte[aktuelleFrage].antworten[optionIndex].naechste // text gibt den wert von aktuelle frage raus der
-            // wert bezieht sich auf antwort wert im array und von nächste
-            geschichte()
-        }
 
         function weiter() {
             geschichte()
@@ -343,63 +318,67 @@
         }
 
         // Optionen zwischenspeichern in Variablen, um sie nicht immer wieder neu zu holen
-    const option1 = document.getElementById('option1')
-    const option2 = document.getElementById('option2')
-    const option3 = document.getElementById('option3')
+        const option1 = document.getElementById('option1')
+        const option2 = document.getElementById('option2')
+        const option3 = document.getElementById('option3')
 
-    const option1Knf = document.getElementById('option1-knf')
-    const option2Knf = document.getElementById('option2-knf')
-    const option3Knf = document.getElementById('option3-knf')
-    function select(index){ // listen texte
-        // Option 1 anpassen
-        option1.innerHTML = texte[index].antworten[0].option; //nimmt den index von antwort und gibt ihnen
-        if(texte[index].antworten[0].option === "") {
-            option1.classList.add("nichtAnzeigen")
-            option1Knf.classList.add("nichtAnzeigen")
-        } else {
-            option1.classList.remove("nichtAnzeigen")
-            option1Knf.classList.remove("nichtAnzeigen")
+        const option1Knf = document.getElementById('option1-knf')
+        const option2Knf = document.getElementById('option2-knf')
+        const option3Knf = document.getElementById('option3-knf')
+        function select(index) { // listen texte
+            // Option 1 anpassen
+            option1.innerHTML = texte[index].antworten[0].option; //nimmt den index von antwort und gibt ihnen
+            if (texte[index].antworten[0].option === "") {
+                option1.classList.add("nichtAnzeigen")
+                option1Knf.classList.add("nichtAnzeigen")
+            } else {
+                option1.classList.remove("nichtAnzeigen")
+                option1Knf.classList.remove("nichtAnzeigen")
+            }
+
+            // Option 2 anpassen
+            option2.innerHTML = texte[index].antworten[1].option;// und gibt ihnen 0-2
+            if (texte[index].antworten[1].option === '') {
+                option2.classList.add("nichtAnzeigen")
+                option2Knf.classList.add("nichtAnzeigen")
+            } else {
+                option2.classList.remove("nichtAnzeigen")
+                option2Knf.classList.remove("nichtAnzeigen")
+            }
+
+            // Option 3 anpassen
+            option3.innerHTML = texte[index].antworten[2].option;
+            if (texte[index].antworten[2].option === '') {
+                option3.classList.add("nichtAnzeigen")
+                option3Knf.classList.add("nichtAnzeigen")
+            } else {
+                option3.classList.remove("nichtAnzeigen")
+                option3Knf.classList.remove("nichtAnzeigen")
+            }
         }
 
-        // Option 2 anpassen
-        option2.innerHTML = texte[index].antworten[1].option;// und gibt ihnen 0-2
-        if(texte[index].antworten[1].option === '') {
-            option2.classList.add("nichtAnzeigen")
-            option2Knf.classList.add("nichtAnzeigen")
-        } else {
-            option2.classList.remove("nichtAnzeigen")
-            option2Knf.classList.remove("nichtAnzeigen")
+        // wenn Option '' dann option hide
+
+        function antwort(optionIndex) { // texte bei den auswahl buttons
+            antwortZaehler++;
+            letzteFrage = aktuelleFrage;
+            antworten.push(texte[letzteFrage].antworten[optionIndex]);
+            aktuelleFrage = texte[aktuelleFrage].antworten[optionIndex].naechste // text gibt den wert von aktuelle frage raus der
+            // wert bezieht sich auf antwort wert im array und von nächste
+            geschichte()
         }
 
-        // Option 3 anpassen
-        option3.innerHTML = texte[index].antworten[2].option;
-        if(texte[index].antworten[2].option === '') {
-            option3.classList.add("nichtAnzeigen")
-            option3Knf.classList.add("nichtAnzeigen")
-        } else {
-            option3.classList.remove("nichtAnzeigen")
-            option3Knf.classList.remove("nichtAnzeigen")
-        }
-    }
-
-    // wenn Option '' dann option hide
-
-    function antwort(optionIndex){ // texte bei den auswahl buttons
-        antwortZaehler++;
-        letzteFrage = aktuelleFrage;
-        aktuelleFrage = texte[aktuelleFrage].antworten[optionIndex].naechste // text gibt den wert von aktuelle frage raus der
-        // wert bezieht sich auf antwort wert im array und von nächste
-        geschichte()
-    }
-        // lehre optionen entpfernen
-        // zusammenfassung welche optionen man genommen hat.   
-
-
-    let zusammenfassung=[];
-
-    function(){
+        // zusammenfassung welche optionen man genommen hat
         
-    }
+        function zusammenfassung(){
+            let antwortTexte = "";
+            for(let i = 0; i < antworten.length; i++) {
+                antwortTexte += "Frage " + (i+1) + " wurde beantwortet mit: " + antworten[i].option + "<br>";
+            }
 
+            document.getElementById("geschichtstext").innerHTML = antwortTexte;
+        }
+        // 1. antworten in array speichern
+        //  2. das array dann als innerhtml ausgeben.
     </script>
 </body>
